@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Inter';
+  src: url(/assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf) format('truetype');
+}
+
+
+@mixin headline-text {
+  font-family: 'Inter';
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 105%;
+}
+@mixin headline-text_italic {
+  @include headline-regular();
+  font-style: italic;
+}
+
+
+@mixin headline-regular {
+  font-family: 'Inter';
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+@mixin headline-regular_italic {
+  @include headline-regular();
+  font-style: italic;
+}
+
+@mixin paragraph-regular {
+  font-family: 'Inter';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+}
