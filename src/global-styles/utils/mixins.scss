@@ -1,0 +1,24 @@
+@mixin borderBottom {
+  &::after {
+    content: '';
+    display: block;
+    position: relative;
+    margin: auto;
+    height: 2px;
+    width: 0%;
+    background-color: $text-dark_color;
+    transition: 0.3s;
+    opacity: 0;
+  }
+  &:hover::after {
+    width: 100%;
+    opacity: 1;
+  }
+
+}
+
+@mixin flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

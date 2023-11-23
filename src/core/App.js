@@ -1,10 +1,12 @@
+import HomePage from './pages/home/home';
+
 class App {
   constructor() {
     this.container = document.body;
   }
 
   run() {
-    console.log(this.container);
+    this.container.append(new HomePage().getElement());
   }
 }
 

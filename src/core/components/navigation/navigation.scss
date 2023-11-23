@@ -1,0 +1,18 @@
+nav {
+  display: flex;
+
+  li {
+    list-style-type: none;
+    margin-right: 40px;
+  }
+  li:last-child {
+    margin-right: 0px;
+  }
+  a {
+    @include borderBottom();
+    @include paragraph-regular();
+
+    text-decoration: none;
+    color: $text-dark_color;
+  }
+}

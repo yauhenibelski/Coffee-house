@@ -1,0 +1,18 @@
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-btn {
+  @include borderBottom();
+
+  .menu-btn-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    @include paragraph-regular();
+    margin-right: 8px;
+  }
+}
