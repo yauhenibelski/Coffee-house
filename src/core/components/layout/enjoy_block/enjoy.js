@@ -7,7 +7,6 @@ class Enjoy extends Component {
   }
 
   createElements() {
-    this.contentContainer = createElement({ tagName: 'div', className: 'content-container' });
     this.offerBlock = createElement({ tagName: 'div', className: 'offerBlock' });
     this.headline = createElement({ tagName: 'h1', text: '<span>Enjoy</span> premium coffee at our charming cafe' });
     this.text = createElement({ tagName: 'p', text: 'With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.' });

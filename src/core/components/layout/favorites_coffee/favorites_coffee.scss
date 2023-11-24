@@ -1,0 +1,64 @@
+.favorite-coffee {
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+  h2 {
+    @include headline-regular();
+
+    span {
+      @include headline-regular_italic();
+      color: $text-accent_color;
+    }
+  }
+
+  .slider-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 40px;
+
+    button {
+      border-radius: 50%;
+      border: 1px solid $border-dark_color;
+      width: 60px;
+      height: 60px;
+      background-image: url(/assets/img/arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $border-dark_color;
+        background-image: url(/assets/img/arrow-light.svg);
+      }
+    }
+    .right-btn {
+      transform: rotate(180deg);
+    }
+  }
+  .slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      @include headline_3-regular();
+      margin-top: 17px;
+    }
+    p {
+      @include paragraph-medium();
+      max-width: 480px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .slider-price {
+      @include headline_3-regular();
+      margin-top: 16px;
+    }
+  }
+}

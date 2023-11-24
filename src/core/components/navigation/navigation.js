@@ -17,7 +17,7 @@ class Navigation extends Component {
         const li = createElement({ tagName: 'li' });
         const link = createElement({ tagName: 'a', text: linkName });
 
-        link.href = `#${linkName.toLocaleLowerCase()}`;
+        link.href = `#${linkName.replace(' ', '-').toLocaleLowerCase()}`;
         li.append(link);
 
         return li;

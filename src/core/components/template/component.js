@@ -1,6 +1,9 @@
+import createElement from '../../utils/createElement';
+
 class Component {
   constructor(tagName, className) {
-    this.container = document.createElement(tagName);
+    this.container = createElement({ tagName });
+    this.contentContainer = createElement({ tagName: 'div', className: 'content-container' });
 
     if (className) this.container.className = className;
 

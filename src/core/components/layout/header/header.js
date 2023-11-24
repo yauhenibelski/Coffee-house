@@ -11,7 +11,6 @@ class Header extends Component {
   }
 
   createElements() {
-    this.contentContainer = createElement({ tagName: 'div', className: 'content-container' });
     this.logoWrap = createElement({ tagName: 'div', className: 'logo-wrap' });
     this.menuBtn = createElement({ tagName: 'button', className: 'menu-btn' });
     this.menuBtnWrap = createElement({ tagName: 'div', className: 'menu-btn-wrap' });

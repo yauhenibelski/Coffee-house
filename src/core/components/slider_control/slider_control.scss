@@ -1,0 +1,18 @@
+.slider-control-container {
+  display: flex;
+  margin-top: 40px;
+
+  .vie-line {
+    border-radius: 100px;
+    margin-right: 12px;
+    width: 40px;
+    height: 4px;
+    background-color: $border-light_color;
+  }
+  .vie-line:last-child {
+    margin-right: 0px;
+  }
+  .vie-line-active {
+    background-color: $border-dark_color;
+  }
+}
