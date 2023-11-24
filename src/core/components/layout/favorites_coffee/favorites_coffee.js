@@ -5,9 +5,9 @@ import slideImg from '../../../../assets/img/coffee-slider-1.png';
 import SliderControl from '../../slider_control/slider_control';
 
 class FavoritesCoffee extends Component {
-  constructor(id) {
-    super('section', id);
-    this.container.id = id;
+  constructor() {
+    super('section', 'favorite-coffee');
+    this.container.id = 'favorite-coffee';
   }
 
   createElements() {

@@ -8,10 +8,12 @@
     width: 40px;
     height: 4px;
     background-color: $border-light_color;
+
+    &:last-child {
+      margin-right: 0px;
+    }
   }
-  .vie-line:last-child {
-    margin-right: 0px;
-  }
+
   .vie-line-active {
     background-color: $border-dark_color;
   }

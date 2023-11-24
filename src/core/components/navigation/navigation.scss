@@ -4,9 +4,10 @@ nav {
   li {
     list-style-type: none;
     margin-right: 40px;
-  }
-  li:last-child {
-    margin-right: 0px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
   }
   a {
     @include borderBottom();
