@@ -1,7 +1,9 @@
-.content-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+header {
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .menu-btn {
   @include borderBottom();

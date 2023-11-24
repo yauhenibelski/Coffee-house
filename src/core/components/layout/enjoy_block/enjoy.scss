@@ -1,0 +1,60 @@
+.enjoy {
+  .content-container {
+    background-image: url(/assets/img/enjoy_bg.png);
+    background-size: cover;
+    border-radius: 40px;
+    padding: 100px;
+    margin-top: 16px;
+  }
+  .offerBlock {
+    max-width: 540px;
+
+    h1 {
+      @include headline-text();
+      color: $text-light_color;
+
+      span {
+        @include headline-text_italic();
+        color: $text-accent_color;
+      }
+    }
+    p {
+      @include paragraph-regular();
+      font-weight: 400;
+      color: $text-light_color;
+      margin: 40px 0;
+    }
+
+    button {
+      @include button-primary(65, 200);
+      color: $text-dark_color;
+      transition: 1s;
+
+      p {
+        @include paragraph-regular();
+        position: relative;
+        color: $text-dark_color;
+        right: -13px;
+        transition: 0.4s;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: relative;
+        background-image: url(/assets/img/coffee-cup.svg);
+        margin-left: 8px;
+        width: 20px;
+        height: 20px;
+        transition: 0.3s;
+        opacity: 0;
+      }
+      &:hover p {
+        right: 0px;
+      }
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+}

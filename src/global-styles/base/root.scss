@@ -7,19 +7,23 @@
 }
 
 body {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   background-color: $background_color;
   padding-top: 20px;
+}
+
+header,
+section,
+footer {
+  padding: 0 40px;
+}
+.content-container {
+  width: 100%;
+  max-width: $desktop-width;
+  margin: auto;
 }
 
 button {
   border: none;
   cursor: pointer;
-}
-
-.content-container {
-  width: 100%;
-  max-width: $desktop-width;
-  margin: auto;
-  padding: 0 40px;
 }

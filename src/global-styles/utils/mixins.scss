@@ -22,3 +22,11 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin button-primary($h, $w) {
+  @include flex_center();
+  width: #{$w}px;
+  height: #{$h}px;
+  border-radius: 100px;
+  background-color: $background_color;
+}

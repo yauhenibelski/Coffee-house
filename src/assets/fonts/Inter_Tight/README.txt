@@ -1,27 +1,36 @@
-Inter Variable Font
-===================
+Inter Tight Variable Font
+=========================
 
-This download contains Inter as both a variable font and static fonts.
+This download contains Inter Tight as both variable fonts and static fonts.
 
-Inter is a variable font with these axes:
-  slnt
+Inter Tight is a variable font with this axis:
   wght
 
-This means all the styles are contained in a single file:
-  Inter-VariableFont_slnt,wght.ttf
+This means all the styles are contained in these files:
+  InterTight-VariableFont_wght.ttf
+  InterTight-Italic-VariableFont_wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Inter:
-  static/Inter-Thin.ttf
-  static/Inter-ExtraLight.ttf
-  static/Inter-Light.ttf
-  static/Inter-Regular.ttf
-  static/Inter-Medium.ttf
-  static/Inter-SemiBold.ttf
-  static/Inter-Bold.ttf
-  static/Inter-ExtraBold.ttf
-  static/Inter-Black.ttf
+in those cases you can use the static font files for Inter Tight:
+  static/InterTight-Thin.ttf
+  static/InterTight-ExtraLight.ttf
+  static/InterTight-Light.ttf
+  static/InterTight-Regular.ttf
+  static/InterTight-Medium.ttf
+  static/InterTight-SemiBold.ttf
+  static/InterTight-Bold.ttf
+  static/InterTight-ExtraBold.ttf
+  static/InterTight-Black.ttf
+  static/InterTight-ThinItalic.ttf
+  static/InterTight-ExtraLightItalic.ttf
+  static/InterTight-LightItalic.ttf
+  static/InterTight-Italic.ttf
+  static/InterTight-MediumItalic.ttf
+  static/InterTight-SemiBoldItalic.ttf
+  static/InterTight-BoldItalic.ttf
+  static/InterTight-ExtraBoldItalic.ttf
+  static/InterTight-BlackItalic.ttf
 
 Get started
 -----------

@@ -1,4 +1,4 @@
-import Header from '../../components/layout/header/header';
+import Enjoy from '../../components/layout/enjoy_block/enjoy';
 import Component from '../../components/template/component';
 
 class HomePage extends Component {
@@ -7,7 +7,7 @@ class HomePage extends Component {
   }
 
   appendElements() {
-    this.container.append(new Header().getElement());
+    this.container.append(new Enjoy().getElement());
   }
 }
 

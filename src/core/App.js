@@ -1,3 +1,4 @@
+import Header from './components/layout/header/header';
 import HomePage from './pages/home/home';
 
 class App {
@@ -6,6 +7,7 @@ class App {
   }
 
   run() {
+    this.container.append(new Header().getElement());
     this.container.append(new HomePage().getElement());
   }
 }

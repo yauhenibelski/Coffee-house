@@ -15,7 +15,7 @@ class Component {
 
   // eslint-disable-next-line class-methods-use-this
   createElements() {
-    // append elements () => void
+    // create elements () => void
   }
 
   render() {
