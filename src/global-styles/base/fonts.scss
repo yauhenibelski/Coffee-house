@@ -45,3 +45,9 @@
   font-weight: 400;
   line-height: 150%;
 }
+@mixin paragraph-caption {
+  font-family: 'Inter';
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 140%;
+}

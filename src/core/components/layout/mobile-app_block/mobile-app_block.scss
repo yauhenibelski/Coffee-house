@@ -1,0 +1,41 @@
+.mobile-app {
+  margin-top: 60px;
+
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mobile-screens {
+    position: relative;
+    background-image: url(/assets/img/mobile-screens.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 630px;
+    height: 630px;
+  }
+  .app-Store-Btn {
+    margin-right: 20px;
+  }
+
+  .download-container {
+    max-width: 630px;
+    align-self: center;
+
+    h2 {
+      @include headline-regular();
+
+      span {
+        @include headline-regular_italic();
+        color: $text-accent_color;
+      }
+    }
+    .offer-text {
+      @include paragraph-medium();
+      margin: 40px 0;
+    }
+  }
+  .btn-container {
+    display: flex;
+  }
+}
