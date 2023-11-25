@@ -1,0 +1,72 @@
+footer {
+  margin-top: 100px;
+
+  .content-container {
+    background-color: $container_color;
+    display: flex;
+    padding: 100px;
+    border-radius: 40px;
+  }
+
+  .offer-container {
+    // background-color: rgba(0, 0, 255, 0.439);
+    margin-right: 9.5vw;
+
+    h2 {
+      &:nth-child(1) {
+        @include headline-regular();
+        color: $text-light_color;
+      }
+      &:nth-child(2) {
+        @include  headline-regular_italic();
+        color: $text-accent_color;
+      }
+    }
+  }
+  .contact-container {
+    color: $text-light_color;
+    align-self: center;
+
+    h3 {
+      @include headline_3-regular();
+      margin-bottom: 36px;
+    }
+    a {
+      @include showBorderBottom($border-light_color);
+      margin-bottom: 16px;
+      display: inline-block;
+      color: $text-light_color;
+      text-decoration: none;
+      text-align: center;
+    }
+    .text {
+      @include paragraph-regular();
+      margin-left: 3px;
+    }
+  }
+  .socials-btn-container {
+    display: flex;
+    margin-top: 40px;
+
+    a {
+      @include flex_center();
+      border-radius: 100px;
+      border: 1px solid $border-light_color;
+      height: 60px;
+      width: 60px;
+      margin-right: 12px;
+      transition: 0.4s;
+
+      svg {
+        stroke: $border-light_color;
+      }
+
+      &:hover {
+        background-color: $background_color;
+        svg {
+          stroke: $border-dark_color;
+        }
+      }
+    }
+  }
+}

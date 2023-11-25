@@ -1,4 +1,4 @@
-@mixin borderBottom {
+@mixin showBorderBottom($color) {
   &::after {
     content: '';
     display: block;
@@ -6,7 +6,7 @@
     margin: auto;
     height: 2px;
     width: 0%;
-    background-color: $text-dark_color;
+    background-color: $color;
     transition: 0.3s;
     opacity: 0;
   }

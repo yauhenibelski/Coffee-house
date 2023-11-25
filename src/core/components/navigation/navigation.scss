@@ -10,7 +10,7 @@ nav {
     }
   }
   a {
-    @include borderBottom();
+    @include showBorderBottom($text-dark_color);
     @include paragraph-regular();
 
     text-decoration: none;
