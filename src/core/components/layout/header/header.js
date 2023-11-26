@@ -1,37 +1,47 @@
 import Component from '../../template/component';
 import createElement from '../../../utils/createElement';
-import logo from '../../../../assets/img/logo.svg';
+import logoSvg from '../../../../assets/img/logo.svg';
 import cupLogo from '../../../../assets/img/coffee-cup.svg';
 import getImg from '../../../utils/getImg';
 import Navigation from '../../ui/navigation/navigation';
+import App from '../../../App';
+import { redirectTo } from '../../../utils/redirectTo';
 
 class Header extends Component {
   constructor() {
     super('header');
 
-    this.createElements();
-    this.appendElements();
+    this.createComponent();
   }
 
-  createElements() {
-    this.logoWrap = createElement({ tagName: 'div', className: 'logo-wrap' });
-    this.menuBtn = createElement({ tagName: 'button', className: 'menu-btn' });
-    this.menuBtnWrap = createElement({ tagName: 'div', className: 'menu-btn-wrap' });
-    this.menuBtnIconContainer = createElement({ tagName: 'div', className: 'menu-img-container' });
-    this.menuBtnText = createElement({ tagName: 'p', text: 'Menu' });
-  }
+  createComponent() {
+    const logo = createElement({ tagName: 'div', className: 'logo-wrap' });
+    const menuBtn = createElement({ tagName: 'button', className: 'menu-btn' });
+    const menuBtnWrap = createElement({ tagName: 'div', className: 'menu-btn-wrap' });
+    const menuBtnIconContainer = createElement({ tagName: 'div', className: 'menu-img-container' });
+    const menuBtnText = createElement({ tagName: 'p', text: 'Menu' });
 
-  appendElements() {
-    this.logoWrap.append(getImg(logo, 'logo'));
+    if (App.currentPageID === 'home/') {
+      menuBtn.classList.add('menu-btn-hover');
+    }
+    if (App.currentPageID === 'menu/') {
+      menuBtn.classList.add('menu-btn-active');
+      logo.classList.add('logo-active');
+    }
 
-    this.menuBtnIconContainer.append(getImg(cupLogo, 'cup-logo'));
-    this.menuBtnWrap.append(this.menuBtnText);
-    this.menuBtnWrap.append(this.menuBtnIconContainer);
-    this.menuBtn.append(this.menuBtnWrap);
+    menuBtn.onclick = () => (App.currentPageID === 'home/' ? redirectTo('menu/') : false);
+    logo.onclick = () => (App.currentPageID === 'menu/' ? redirectTo('home/') : false);
 
-    this.contentContainer.append(this.logoWrap);
+    logo.append(getImg(logoSvg, 'logo'));
+
+    menuBtnIconContainer.append(getImg(cupLogo, 'cup-logo'));
+    menuBtnWrap.append(menuBtnText);
+    menuBtnWrap.append(menuBtnIconContainer);
+    menuBtn.append(menuBtnWrap);
+
+    this.contentContainer.append(logo);
     this.contentContainer.append(new Navigation().getElement());
-    this.contentContainer.append(this.menuBtn);
+    this.contentContainer.append(menuBtn);
 
     this.container.append(this.contentContainer);
   }

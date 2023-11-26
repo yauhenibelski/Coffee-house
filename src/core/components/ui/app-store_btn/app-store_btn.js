@@ -4,12 +4,13 @@ import Component from '../../template/component';
 class AppStoreBtn extends Component {
   constructor(logoHTML, text, storeText) {
     super('button', 'app-Store-Btn');
-    this.logoWrap.innerHTML = logoHTML;
-    this.text.innerHTML = text;
-    this.storeText.innerHTML = storeText;
 
     this.createElements();
     this.appendElements();
+
+    this.logoWrap.innerHTML = logoHTML;
+    this.text.innerHTML = text;
+    this.storeText.innerHTML = storeText;
   }
 
   createElements() {

@@ -14,13 +14,15 @@ class Component {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  createElements() {
+  createComponent() {
     // create elements () => void
   }
 
   render() {
     this.container.innerHTML = '';
-    this.appendElements();
+    this.contentContainer.innerHTML = '';
+
+    this.createComponent();
   }
 
   getElement() {

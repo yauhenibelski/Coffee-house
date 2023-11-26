@@ -1,5 +1,6 @@
 import createElement from '../../../utils/createElement';
 import Component from '../../template/component';
+import { redirectTo } from '../../../utils/redirectTo';
 
 class Enjoy extends Component {
   constructor() {
@@ -7,6 +8,8 @@ class Enjoy extends Component {
 
     this.createElements();
     this.appendElements();
+
+    this.menuBtn.onclick = () => redirectTo('menu/');
   }
 
   createElements() {

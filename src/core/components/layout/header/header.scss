@@ -4,17 +4,28 @@ header {
     justify-content: space-between;
     align-items: center;
   }
-}
-.menu-btn {
-  @include showBorderBottom($text-dark_color);
+  .menu-btn {
+    @include showBorderBottom($text-dark_color);
 
-  .menu-btn-wrap {
-    display: flex;
-    align-items: center;
+    .menu-btn-wrap {
+      display: flex;
+      align-items: center;
+    }
+
+    p {
+      @include paragraph-regular();
+      margin-right: 8px;
+    }
   }
-
-  p {
-    @include paragraph-regular();
-    margin-right: 8px;
+  .menu-btn-hover {
+    @include showBorderBottomHover();
+    cursor: pointer;
+  }
+  .menu-btn-active {
+    @include showBorderBottomActive();
+    cursor: default;
+  }
+  .logo-active {
+    cursor: pointer;
   }
 }

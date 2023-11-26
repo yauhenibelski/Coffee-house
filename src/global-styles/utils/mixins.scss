@@ -10,11 +10,18 @@
     transition: 0.3s;
     opacity: 0;
   }
+}
+@mixin showBorderBottomActive {
+  &::after {
+    width: 100%;
+    opacity: 1;
+  }
+}
+@mixin showBorderBottomHover {
   &:hover::after {
     width: 100%;
     opacity: 1;
   }
-
 }
 
 @mixin flex_center {

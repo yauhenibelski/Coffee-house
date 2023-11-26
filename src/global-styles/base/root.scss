@@ -24,8 +24,9 @@ footer {
   max-width: $desktop-width;
   margin: auto;
 }
-
+a {
+  cursor: default;
+}
 button {
   border: none;
-  cursor: pointer;
 }

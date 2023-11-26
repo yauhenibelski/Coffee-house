@@ -31,6 +31,7 @@ footer {
     }
     a {
       @include showBorderBottom($border-light_color);
+      @include showBorderBottomHover();
       margin-bottom: 16px;
       display: inline-block;
       color: $text-light_color;
