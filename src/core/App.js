@@ -1,18 +1,17 @@
+/* eslint-disable no-param-reassign */
 import Footer from './components/layout/footer/footer';
 import Header from './components/layout/header/header';
 import MenuPage from './pages/menu/menu';
 import HomePage from './pages/home/home';
+import { routes } from './utils/routes';
 
 class App {
   constructor() {
     this.container = document.body;
     window.location.hash = App.currentPageID;
-    window.onhashchange = () => {
-
-    };
   }
 
-  static currentPageID = 'home/';
+  static currentPageID = routes.home;
 
   pages = {
     home: new HomePage(),
@@ -26,15 +25,23 @@ class App {
 
   renderPage(id) {
     const { header } = this.elem;
-    const { home, menu } = this.pages;
+    const pages = Object.values(this.pages).map((page) => page.getElement());
     const currentPage = document.getElementById(App.currentPageID.slice(0, -1));
+    const [home, menu] = pages;
 
-    if (id === 'home/') {
-      header.getElement().after(home.getElement());
+    pages.forEach((elem) => { elem.style.opacity = 0; });
+
+    if (id === routes.home) {
+      header.getElement().after(home);
     }
-    if (id === 'menu/') {
-      header.getElement().after(menu.getElement());
+    if (id === routes.menu) {
+      header.getElement().after(menu);
     }
+
+    setTimeout(() => {
+      pages.forEach((elem) => { elem.style = null; });
+    });
+
     if (currentPage && (id !== App.currentPageID)) currentPage.remove();
 
     App.currentPageID = id;
@@ -45,16 +52,18 @@ class App {
     window.onhashchange = () => {
       const hash = window.location.hash.slice(1);
 
-      if (hash === 'home/') return this.renderPage(hash);
-      if (hash === 'menu/') return this.renderPage(hash);
+      if (!Object.values(routes).includes(hash)) return;
+
+      if (hash === routes.home) return this.renderPage(hash);
+      if (hash === routes.menu) return this.renderPage(hash);
 
       const elem = document.getElementById(hash);
       if (elem) return;
 
       // eslint-disable-next-line no-unused-expressions
-      App.currentPageID === 'home/'
-        ? this.renderPage('menu/')
-        : this.renderPage('home/');
+      App.currentPageID === routes.home
+        ? this.renderPage(routes.menu)
+        : this.renderPage(routes.home);
 
       const selectedItem = document.getElementById(hash);
       selectedItem.scrollIntoView();
@@ -67,7 +76,7 @@ class App {
     this.container.append(header.getElement());
     this.container.append(footer.getElement());
 
-    this.renderPage('home/');
+    this.renderPage(routes.home);
     this.router();
   }
 }

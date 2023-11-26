@@ -6,17 +6,26 @@ import ChangeCategoryBlock from '../change-category-block/change-category-block'
 class ProductsContainer extends Component {
   constructor() {
     super('div', 'products-container');
-    this.products = productsData.filter((product) => {
-      return product.category === ChangeCategoryBlock.value;
-    });
+    this.createComponent();
 
-    this.appendElements();
+    ProductsContainer.elem = this;
   }
 
-  appendElements() {
-    this.products.forEach((product) => {
+  createComponent() {
+    const filteredProducts = productsData.filter((product) => {
+      return product.category === ChangeCategoryBlock.value;
+    });
+    filteredProducts.forEach((product) => {
       this.container.append(new Card(product).getElement());
     });
+  }
+
+  smoothRender() {
+    this.container.style.opacity = 0;
+    setTimeout(() => {
+      this.render();
+      this.container.style = null;
+    }, 200);
   }
 }
 

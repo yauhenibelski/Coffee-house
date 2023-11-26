@@ -6,6 +6,18 @@ import coffeeImg5 from './img/coffee-5.png';
 import coffeeImg6 from './img/coffee-6.png';
 import coffeeImg7 from './img/coffee-7.png';
 import coffeeImg8 from './img/coffee-8.png';
+import tea1 from './img/tea-1.png';
+import tea2 from './img/tea-2.png';
+import tea3 from './img/tea-3.png';
+import tea4 from './img/tea-4.png';
+import dessert1 from './img/dessert-1.png';
+import dessert2 from './img/dessert-2.png';
+import dessert3 from './img/dessert-3.png';
+import dessert4 from './img/dessert-4.png';
+import dessert5 from './img/dessert-5.png';
+import dessert6 from './img/dessert-6.png';
+import dessert7 from './img/dessert-7.png';
+import dessert8 from './img/dessert-8.png';
 
 export const products = [
   {
@@ -301,6 +313,7 @@ export const products = [
     description: 'Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint',
     price: '4.50',
     category: 'tea',
+    image: tea1,
     sizes: {
       s: {
         size: '200 ml',
@@ -336,6 +349,7 @@ export const products = [
     description: 'Original black tea with fresh ginger, lemon and honey',
     price: '5.00',
     category: 'tea',
+    image: tea2,
     sizes: {
       s: {
         size: '200 ml',
@@ -371,6 +385,7 @@ export const products = [
     description: 'Invigorating black tea with cranberry and honey',
     price: '5.00',
     category: 'tea',
+    image: tea3,
     sizes: {
       s: {
         size: '200 ml',
@@ -406,6 +421,7 @@ export const products = [
     description: 'Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon',
     price: '5.50',
     category: 'tea',
+    image: tea4,
     sizes: {
       s: {
         size: '200 ml',
@@ -441,6 +457,7 @@ export const products = [
     description: 'Philadelphia cheese with lemon zest on a light sponge cake and red currant jam',
     price: '3.50',
     category: 'dessert',
+    image: dessert1,
     sizes: {
       s: {
         size: '50 g',
@@ -476,6 +493,7 @@ export const products = [
     description: 'Layer cake with cream cheese frosting',
     price: '4.00',
     category: 'dessert',
+    image: dessert2,
     sizes: {
       s: {
         size: '50 g',
@@ -511,6 +529,7 @@ export const products = [
     description: 'Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar',
     price: '4.50',
     category: 'dessert',
+    image: dessert3,
     sizes: {
       s: {
         size: '50 g',
@@ -546,6 +565,7 @@ export const products = [
     description: 'Delicate creamy dessert in a caramel basket with wild berries',
     price: '4.00',
     category: 'dessert',
+    image: dessert4,
     sizes: {
       s: {
         size: '50 g',
@@ -581,6 +601,7 @@ export const products = [
     description: 'Tender pancakes with strawberry jam and fresh strawberries',
     price: '4.50',
     category: 'dessert',
+    image: dessert5,
     sizes: {
       s: {
         size: '50 g',
@@ -616,6 +637,7 @@ export const products = [
     description: 'Classic honey cake with delicate custard',
     price: '4.50',
     category: 'dessert',
+    image: dessert6,
     sizes: {
       s: {
         size: '50 g',
@@ -651,6 +673,7 @@ export const products = [
     description: 'Cake with hot chocolate filling and nuts with dried apricots',
     price: '5.50',
     category: 'dessert',
+    image: dessert7,
     sizes: {
       s: {
         size: '50 g',
@@ -686,6 +709,7 @@ export const products = [
     description: 'A combination of thin sponge cake with cherry jam and light chocolate mousse',
     price: '6.50',
     category: 'dessert',
+    image: dessert8,
     sizes: {
       s: {
         size: '50 g',

@@ -7,6 +7,11 @@
     height: 64px;
     padding: 0 20px;
     transition: 0.3s;
+    color: $text-dark_color;
+
+    svg {
+      fill: $text-dark_color;
+    }
 
     .text-container {
       display: flex;

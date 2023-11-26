@@ -19,14 +19,17 @@ section,
 footer {
   padding: 0 40px;
 }
+
+main {
+  transition: 0.4s;
+}
 .content-container {
   width: 100%;
   max-width: $desktop-width;
   margin: auto;
 }
-a {
-  cursor: default;
-}
+
 button {
   border: none;
+  cursor: pointer;
 }
