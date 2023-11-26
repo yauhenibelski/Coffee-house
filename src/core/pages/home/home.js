@@ -7,6 +7,8 @@ import Component from '../../components/template/component';
 class HomePage extends Component {
   constructor() {
     super('main');
+
+    this.appendElements();
   }
 
   appendElements() {

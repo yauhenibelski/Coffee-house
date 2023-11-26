@@ -3,11 +3,14 @@ import createElement from '../../../utils/createElement';
 import logo from '../../../../assets/img/logo.svg';
 import cupLogo from '../../../../assets/img/coffee-cup.svg';
 import getImg from '../../../utils/getImg';
-import Navigation from '../../navigation/navigation';
+import Navigation from '../../ui/navigation/navigation';
 
 class Header extends Component {
   constructor() {
     super('header');
+
+    this.createElements();
+    this.appendElements();
   }
 
   createElements() {

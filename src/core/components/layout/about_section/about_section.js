@@ -10,6 +10,9 @@ class AboutSection extends Component {
   constructor() {
     super('section', 'about');
     this.container.id = 'about';
+
+    this.createElements();
+    this.appendElements();
   }
 
   createElements() {

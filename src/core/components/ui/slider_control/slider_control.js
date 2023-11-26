@@ -1,9 +1,12 @@
-import createElement from '../../utils/createElement';
-import Component from '../template/component';
+import createElement from '../../../utils/createElement';
+import Component from '../../template/component';
 
 class SliderControl extends Component {
   constructor() {
     super('div', 'slider-control-container');
+
+    this.createElements();
+    this.appendElements();
   }
 
   createElements() {

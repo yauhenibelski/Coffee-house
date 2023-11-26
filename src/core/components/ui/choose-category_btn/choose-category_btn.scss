@@ -1,0 +1,52 @@
+.choose-category-wrap {
+
+  .choose-category {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    padding: 8px 16px 8px 8px;
+    border: 1px solid $border-light_color;
+    border-radius: 100px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    span {
+      @include flex_center();
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        background-color: $border-light_color;
+    }
+    p {
+      @include paragraph-regular();
+      margin-left: 8px;
+      display: inline-block;
+    }
+    &:hover {
+      background-color: $container_color;
+
+      span {
+        background-color: $background_color;
+      }
+      p {
+        color: $text-light_color;
+      }
+    }
+
+  }
+
+  input {
+    display: none;
+
+    &:checked + label {
+      background-color: $container_color;
+
+    span {
+      background-color: $background_color;
+    }
+    p {
+      color: $text-light_color;
+    }
+    }
+  }
+}

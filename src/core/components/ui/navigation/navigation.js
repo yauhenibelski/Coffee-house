@@ -1,11 +1,14 @@
-import Component from '../template/component';
-import createElement from '../../utils/createElement';
+import Component from '../../template/component';
+import createElement from '../../../utils/createElement';
 
 class Navigation extends Component {
   static links = this.links;
 
   constructor() {
     super('nav');
+
+    this.createElements();
+    this.appendElements();
   }
 
   createElements() {

@@ -6,9 +6,6 @@ class Component {
     this.contentContainer = createElement({ tagName: 'div', className: 'content-container' });
 
     if (className) this.container.className = className;
-
-    this.createElements();
-    this.appendElements();
   }
 
   // eslint-disable-next-line class-methods-use-this

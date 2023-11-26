@@ -2,12 +2,15 @@ import createElement from '../../../utils/createElement';
 import Component from '../../template/component';
 import getImg from '../../../utils/getImg';
 import slideImg from '../../../../assets/img/coffee-slider-1.png';
-import SliderControl from '../../slider_control/slider_control';
+import SliderControl from '../../ui/slider_control/slider_control';
 
 class FavoritesCoffee extends Component {
   constructor() {
     super('section', 'favorite-coffee');
     this.container.id = 'favorite-coffee';
+
+    this.createElements();
+    this.appendElements();
   }
 
   createElements() {

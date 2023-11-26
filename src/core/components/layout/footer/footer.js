@@ -5,6 +5,8 @@ class Footer extends Component {
   constructor() {
     super('footer');
     this.contentContainer.id = 'contact-us';
+
+    this.appendElements();
   }
 
   appendElements() {

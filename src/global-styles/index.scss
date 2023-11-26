@@ -6,14 +6,19 @@
 
 // Components
 @import '../core/components/layout/header/header.scss';
-@import '../core/components/navigation/navigation.scss';
+@import '../core/components/ui/navigation/navigation.scss';
 @import '../core/components/layout/enjoy_block/enjoy.scss';
 @import '../core/components/layout/favorites_coffee/favorites_coffee.scss';
-@import '../core/components/slider_control/slider_control.scss';
+@import '../core/components/ui/slider_control/slider_control.scss';
 @import '../core/components/layout/about_section/about_section.scss';
 @import '../core/components/layout/mobile-app_block/mobile-app_block.scss';
-@import '../core/components/app-store_btn/app-store_btn.scss';
+@import '../core/components/ui/app-store_btn/app-store_btn.scss';
 @import '../core/components/layout/footer/footer.scss';
+@import '../core//components/ui/choose-category_btn/choose-category_btn.scss';
+@import '../core/components/layout/change-category-block/change-category-block.scss';
+@import '../core/components/layout/products_container/products_container.scss';
+@import '../core/components/ui/card/card.scss';
 
 // Pages
 @import '../core/pages/home/home.scss';
+@import '../core/pages/menu/menu.scss';

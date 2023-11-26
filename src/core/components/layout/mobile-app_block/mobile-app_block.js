@@ -1,5 +1,5 @@
 import createElement from '../../../utils/createElement';
-import AppStoreBtn from '../../app-store_btn/app-store_btn';
+import AppStoreBtn from '../../ui/app-store_btn/app-store_btn';
 import Component from '../../template/component';
 import appleIcon from '../../../../assets/img/apple_icon.html';
 import googleIcon from '../../../../assets/img/google-play-icon.html';
@@ -8,6 +8,9 @@ class MobileApp extends Component {
   constructor() {
     super('section', 'mobile-app');
     this.container.id = 'mobile-app';
+
+    this.createElements();
+    this.appendElements();
   }
 
   createElements() {

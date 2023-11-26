@@ -4,6 +4,9 @@ import Component from '../../template/component';
 class Enjoy extends Component {
   constructor() {
     super('section', 'enjoy');
+
+    this.createElements();
+    this.appendElements();
   }
 
   createElements() {

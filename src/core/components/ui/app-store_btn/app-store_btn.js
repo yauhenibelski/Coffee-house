@@ -1,5 +1,5 @@
-import createElement from '../../utils/createElement';
-import Component from '../template/component';
+import createElement from '../../../utils/createElement';
+import Component from '../../template/component';
 
 class AppStoreBtn extends Component {
   constructor(logoHTML, text, storeText) {
@@ -7,6 +7,9 @@ class AppStoreBtn extends Component {
     this.logoWrap.innerHTML = logoHTML;
     this.text.innerHTML = text;
     this.storeText.innerHTML = storeText;
+
+    this.createElements();
+    this.appendElements();
   }
 
   createElements() {
