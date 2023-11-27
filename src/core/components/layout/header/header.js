@@ -16,7 +16,7 @@ class Header extends Component {
 
   createComponent() {
     const logo = createElement({ tagName: 'div', className: 'logo-wrap' });
-    const menuBtn = createElement({ tagName: 'button', className: 'menu-btn' });
+    const menuBtn = createElement({ tagName: 'div', className: 'menu-btn' });
     const menuBtnWrap = createElement({ tagName: 'div', className: 'menu-btn-wrap' });
     const menuBtnIconContainer = createElement({ tagName: 'div', className: 'menu-img-container' });
     const menuBtnText = createElement({ tagName: 'p', text: 'Menu' });

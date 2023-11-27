@@ -20,7 +20,7 @@ class ChooseCategoryBtn extends Component {
     this.label.htmlFor = this.prop.id;
 
     this.icon = createElement({ tagName: 'span', text: this.prop.icon });
-    this.text = createElement({ tagName: 'p', text: this.prop.text });
+    this.text = createElement({ tagName: 'span', text: this.prop.text });
   }
 
   appendElements() {

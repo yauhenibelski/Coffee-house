@@ -13,6 +13,7 @@ class Navigation extends Component {
 
   createElements() {
     const linkNames = ['Favorite coffee', 'About', 'Mobile app', 'Contact us'];
+    this.nList = createElement({ tagName: 'ul' });
 
     this.links = {
       names: linkNames,
@@ -30,8 +31,10 @@ class Navigation extends Component {
 
   appendElements() {
     this.links.elements.forEach((element) => {
-      this.container.append(element);
+      this.nList.append(element);
     });
+
+    this.container.append(this.nList);
   }
 }
 

@@ -3,7 +3,7 @@ import Component from '../../template/component';
 
 class AppStoreBtn extends Component {
   constructor(logoHTML, text, storeText) {
-    super('button', 'app-Store-Btn');
+    super('div', 'app-Store-Btn');
 
     this.createElements();
     this.appendElements();
