@@ -40,12 +40,11 @@ class App {
 
     setTimeout(() => {
       pages.forEach((elem) => { elem.style = null; });
-    });
+      if (currentPage && (id !== App.currentPageID)) currentPage.remove();
 
-    if (currentPage && (id !== App.currentPageID)) currentPage.remove();
-
-    App.currentPageID = id;
-    this.elem.header.render();
+      App.currentPageID = id;
+      this.elem.header.render();
+    }, 70);
   }
 
   router() {

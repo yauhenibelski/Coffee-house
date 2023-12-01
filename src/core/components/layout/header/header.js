@@ -6,6 +6,7 @@ import getImg from '../../../utils/getImg';
 import Navigation from '../../ui/navigation/navigation';
 import App from '../../../App';
 import { redirectTo } from '../../../utils/redirectTo';
+import { routes } from '../../../utils/routes';
 
 class Header extends Component {
   constructor() {
@@ -21,16 +22,16 @@ class Header extends Component {
     const menuBtnIconContainer = createElement({ tagName: 'div', className: 'menu-img-container' });
     const menuBtnText = createElement({ tagName: 'p', text: 'Menu' });
 
-    if (App.currentPageID === 'home/') {
+    if (App.currentPageID === routes.home) {
       menuBtn.classList.add('menu-btn-hover');
     }
-    if (App.currentPageID === 'menu/') {
+    if (App.currentPageID === routes.menu) {
       menuBtn.classList.add('menu-btn-active');
       logo.classList.add('logo-active');
     }
 
-    menuBtn.onclick = () => (App.currentPageID === 'home/' ? redirectTo('menu/') : false);
-    logo.onclick = () => (App.currentPageID === 'menu/' ? redirectTo('home/') : false);
+    menuBtn.onclick = () => (App.currentPageID === routes.home ? redirectTo(routes.menu) : false);
+    logo.onclick = () => (App.currentPageID === routes.menu ? redirectTo(routes.home) : false);
 
     logo.append(getImg(logoSvg, 'logo'));
 

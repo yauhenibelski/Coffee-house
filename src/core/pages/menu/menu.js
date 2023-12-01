@@ -2,11 +2,12 @@ import ChangeCategoryBlock from '../../components/layout/change-category-block/c
 import ProductsContainer from '../../components/layout/products_container/products_container';
 import Component from '../../components/template/component';
 import createElement from '../../utils/createElement';
+import { routes } from '../../utils/routes';
 
 class MenuPage extends Component {
   constructor() {
     super('main', 'menu');
-    this.container.id = 'menu';
+    this.container.id = routes.menu.slice(0, -1);
 
     this.createElements();
     this.appendElements();
