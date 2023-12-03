@@ -29,14 +29,16 @@
         @include paragraph-regular();
       }
     }
-    &:hover {
-      background-color: $container_color;
-      svg {
-        fill: $background_color;
-        transition: 0.3s;
-      }
-      p {
-        color: $background_color;
+    @media (hover: hover) {
+      &:hover {
+        background-color: $container_color;
+        svg {
+          fill: $background_color;
+          transition: 0.3s;
+        }
+        p {
+          color: $background_color;
+        }
       }
     }
 }

@@ -13,25 +13,28 @@ class Burger extends Component {
   createComponent() {
     this.button = createElement({ tagName: 'div', className: 'burger-btn' });
     this.menu = createElement({ tagName: 'div', className: 'burger' });
-    this.links.forEach((li) => this.menu.append(li));
+    this.nList = createElement({ tagName: 'ul' });
 
+    this.links.forEach((li) => this.nList.append(li));
+    
+    this.menu.append(this.nList);
     this.container.append(this.menu);
 
-    this.button.onclick = () => {
-      if (Burger.open) {
-        this.closeBurger();
-        document.body.onclick = null;
-      } else {
-        this.openBurger();
+    // this.button.onclick = () => {
+    //   if (Burger.open) {
+    //     this.closeBurger();
+    //     document.body.onclick = null;
+    //   } else {
+    //     this.openBurger();
 
-        setTimeout(() => {
-          document.body.onclick = () => {
-            if (Burger.open) this.closeBurger();
-            document.body.onclick = null;
-          };
-        });
-      }
-    };
+    //     setTimeout(() => {
+    //       document.body.onclick = () => {
+    //         if (Burger.open) this.closeBurger();
+    //         document.body.onclick = null;
+    //       };
+    //     });
+    //   }
+    // };
   }
 
   openBurger() {

@@ -31,15 +31,18 @@
       background-position: center center;
       transition: 0.3s;
 
-      &:hover {
-        background-color: $border-dark_color;
-        background-image: url(/assets/img/arrow-light.svg);
+      @media (hover: hover) {
+        &:hover {
+          background-color: $border-dark_color;
+          background-image: url(/assets/img/arrow-light.svg);
+        }
       }
     }
     .right-btn {
       transform: rotate(180deg);
     }
   }
+  
   .slider-container {
     display: flex;
     flex-direction: column;

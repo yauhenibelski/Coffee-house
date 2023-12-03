@@ -30,7 +30,6 @@
       @include button-primary(65, 200);
       color: $text-dark_color;
       transition: 1s;
-      cursor: pointer;
 
       p {
         @include paragraph-regular();
@@ -92,12 +91,6 @@
         span {
           @include headline-text_italic_mobile();
         }
-      }
-      p {
-        // @include paragraph-regular();
-        // font-weight: 400;
-        // color: $text-light_color;
-        // margin: 40px 0;
       }
     }
   }

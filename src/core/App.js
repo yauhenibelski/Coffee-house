@@ -25,7 +25,7 @@ class App {
   renderPage(id) {
     const { header } = this.elem;
     const pages = Object.values(this.pages).map((page) => page.getElement());
-    const currentPage = document.getElementById(App.currentPageID.slice(0, -1));
+    const currentPage = document.getElementById(App.currentPageID.slice(1));
     const [home, menu] = pages;
 
     pages.forEach((elem) => { elem.style.opacity = 0; });
@@ -36,6 +36,8 @@ class App {
     if (id === routes.menu) {
       header.getElement().after(menu);
     }
+
+    console.log(currentPage);
 
     setTimeout(() => {
       pages.forEach((elem) => { elem.style = null; });

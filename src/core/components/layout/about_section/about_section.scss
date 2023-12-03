@@ -71,10 +71,16 @@ $img_short_max-height: 430px;
     width: 660px;
     overflow: hidden;
     transition: 0.4s;
+  }
+}
 
-    &:hover {
-      img {
-        transform: scale(0.91);
+@media (hover: hover) {
+  .about {
+    .picture-wrap {
+      &:hover {
+        img {
+          transform: scale(0.91);
+        }
       }
     }
   }
@@ -117,6 +123,7 @@ $img_short_max-height: 430px;
           }
           &:nth-child(2) {
             height: 77vmax;
+            // width: 688px;
             width: 90vmax;
             max-width: 688px;
           }

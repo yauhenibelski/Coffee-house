@@ -25,21 +25,6 @@
         display: inline-block;
       }
     }
-
-    &:hover {
-      background-color: $container_color;
-
-      span {
-
-        &:first-child {
-          background-color: $background_color;
-        }
-        &:last-child {
-          color: $text-light_color;
-        }
-      }
-    }
-
   }
 
   input {
@@ -63,6 +48,24 @@
     .choose-category {
       background-color: $container_color;
       cursor: default;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .choose-category {
+    &:hover {
+      background-color: $container_color;
+
+      span {
+
+        &:first-child {
+          background-color: $background_color;
+        }
+        &:last-child {
+          color: $text-light_color;
+        }
+      }
     }
   }
 }

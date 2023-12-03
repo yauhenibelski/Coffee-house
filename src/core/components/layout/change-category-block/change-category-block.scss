@@ -10,3 +10,14 @@
     }
   }
 }
+@media (max-width: 740px) {
+  .choose-category-btn-wrap {
+    .choose-category-wrap {
+      margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+}

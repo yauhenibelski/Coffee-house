@@ -30,7 +30,6 @@ footer {
     }
     a {
       @include showBorderBottom($border-light_color);
-      @include showBorderBottomHover();
       margin-bottom: 16px;
       display: inline-block;
       color: $text-light_color;
@@ -58,17 +57,29 @@ footer {
       svg {
         stroke: $border-light_color;
       }
+    }
+  }
+}
 
-      &:hover {
-        background-color: $background_color;
-        svg {
-          stroke: $border-dark_color;
+@media (hover: hover) {
+  footer {
+    .contact-container {
+      a {
+        @include showBorderBottomHover();
+      }
+    }
+    .socials-btn-container {
+      a {
+        &:hover {
+          background-color: $background_color;
+          svg {
+            stroke: $border-dark_color;
+          }
         }
       }
     }
   }
 }
-
 @media (max-width: 1180px) {
   footer {
     .content {
