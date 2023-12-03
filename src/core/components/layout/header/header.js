@@ -7,6 +7,7 @@ import Navigation from '../../ui/navigation/navigation';
 import App from '../../../App';
 import { redirectTo } from '../../../utils/redirectTo';
 import { routes } from '../../../utils/routes';
+import Burger from '../../ui/burger/burger';
 
 class Header extends Component {
   constructor() {
@@ -21,6 +22,8 @@ class Header extends Component {
     const menuBtnWrap = createElement({ tagName: 'div', className: 'menu-btn-wrap' });
     const menuBtnIconContainer = createElement({ tagName: 'div', className: 'menu-img-container' });
     const menuBtnText = createElement({ tagName: 'p', text: 'Menu' });
+    this.nav = new Navigation().getElement();
+    this.burger = new Burger(Navigation.links.elements).getElement();
 
     if (App.currentPageID === routes.home) {
       menuBtn.classList.add('menu-btn-hover');
@@ -30,8 +33,8 @@ class Header extends Component {
       logo.classList.add('logo-active');
     }
 
-    menuBtn.onclick = () => (App.currentPageID === routes.home ? redirectTo(routes.menu) : false);
-    logo.onclick = () => (App.currentPageID === routes.menu ? redirectTo(routes.home) : false);
+    menuBtn.onclick = () => (App.currentPageID === routes.home && redirectTo(routes.menu));
+    logo.onclick = () => (App.currentPageID === routes.menu && redirectTo(routes.home));
 
     logo.append(getImg(logoSvg, 'logo'));
 
@@ -41,8 +44,11 @@ class Header extends Component {
     menuBtn.append(menuBtnWrap);
 
     this.contentContainer.append(logo);
-    this.contentContainer.append(new Navigation().getElement());
+    this.contentContainer.append(this.nav);
     this.contentContainer.append(menuBtn);
+
+    this.contentContainer.append(this.burger.button);
+    this.contentContainer.append(this.burger.menu);
 
     this.container.append(this.contentContainer);
   }

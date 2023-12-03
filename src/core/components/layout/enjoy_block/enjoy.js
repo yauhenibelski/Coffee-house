@@ -18,6 +18,7 @@ class Enjoy extends Component {
     this.text = createElement({ tagName: 'p', text: 'With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.' });
     this.menuBtn = createElement({ tagName: 'div', className: 'menu-btn' });
     this.menuBtnText = createElement({ tagName: 'p', text: 'Menu' });
+    this.content = createElement({ tagName: 'div', className: 'content' });
   }
 
   appendElements() {
@@ -27,7 +28,9 @@ class Enjoy extends Component {
     this.offerBlock.append(this.text);
     this.offerBlock.append(this.menuBtn);
 
-    this.contentContainer.append(this.offerBlock);
+    this.content.append(this.offerBlock);
+
+    this.contentContainer.append(this.content);
     this.container.append(this.contentContainer);
   }
 }

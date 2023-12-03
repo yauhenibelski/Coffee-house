@@ -16,6 +16,8 @@ module.exports = {
     "consistent-return": "off",
     "import/no-cycle": "off",
     "import/prefer-default-export": "off",
-    "arrow-body-style": "off"
+    "arrow-body-style": "off",
+    "no-param-reassign": "off",
+    "no-unused-expressions": "off"
   }
 }

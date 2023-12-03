@@ -1,0 +1,59 @@
+.burger-wrapper {
+  position: absolute;
+  right: 13px;
+  height: 480px;
+  width: 332px;
+  top: 90px;
+  overflow: hidden;
+}
+
+.burger-btn {
+  display: none;
+}
+
+.burger {
+  position: absolute;
+  display: flex;
+  padding-top: 10px;
+  flex-direction: column;
+  align-items: center;
+  background-color: $background_color;
+  right: -500%;
+  height: 100%;
+  width: 100%;
+  transition: 0.3s;
+  z-index: 1;
+
+  li {
+    margin-bottom: 30px;
+    margin-left: 0px;
+  }
+
+  a {
+    // @include desktop_paragraph-regular;
+    // color: $light_text-color;
+    text-decoration: none;
+    line-height: 50px;
+    letter-spacing: 0px;
+    transition: 0.3s;
+  }
+}
+
+.burger-active {
+  right: 13px;
+}
+
+@media (max-width: $point-to-transform-in-tablet) {
+  .burger-btn {
+    display: block;
+    background-image: url(/assets/img/button-icon-burger.svg);
+    width: 44px;
+    height: 44px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+  }
+  .burger-btn-active {
+    background-image: url(/assets/img/button-icon-burger_active.svg);
+  }
+}

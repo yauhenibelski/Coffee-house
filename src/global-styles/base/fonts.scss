@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @mixin headline-text {
   font-family: 'Inter';
-  font-size: 72px;
+  font-size: 4.5rem;
   font-weight: 600;
   line-height: 105%;
   font-style: normal;
@@ -14,16 +15,16 @@
 
 @mixin headline-regular {
   font-family: 'Inter';
-  font-size: 60px;
+  font-size: 3.75rem;
   font-weight: 600;
   line-height: 125%;
 }
 
 @mixin headline_3-regular {
   font-family: 'Inter';
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 125%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 125%;
 }
 
 @mixin headline-regular_italic {
@@ -33,20 +34,41 @@
 
 @mixin paragraph-regular {
   font-family: 'Inter';
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 150%;
 }
 
 @mixin paragraph-medium {
   font-family: 'Inter';
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 150%;
 }
 @mixin paragraph-caption {
   font-family: 'Inter';
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 600;
   line-height: 140%;
+}
+
+@mixin headline-text_mobile {
+  font-family: 'Inter';
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 115%;
+}
+@mixin headline-text_italic_mobile {
+  @include headline-text_mobile();
+  font-style: italic;
+}
+
+@mixin headline-regular_mobile {
+  font-family: 'Inter';
+  font-size: 32px;
+  line-height: 125%;
+}
+@mixin headline-regular_italic_mobile {
+  @include headline-regular_mobile();
+  font-style: italic;
 }

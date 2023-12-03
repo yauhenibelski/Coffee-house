@@ -2,8 +2,6 @@ import Component from '../../template/component';
 import createElement from '../../../utils/createElement';
 
 class Navigation extends Component {
-  static links = this.links;
-
   constructor() {
     super('nav');
 
@@ -15,7 +13,7 @@ class Navigation extends Component {
     const linkNames = ['Favorite coffee', 'About', 'Mobile app', 'Contact us'];
     this.nList = createElement({ tagName: 'ul' });
 
-    this.links = {
+    Navigation.links = {
       names: linkNames,
       elements: linkNames.map((linkName) => {
         const li = createElement({ tagName: 'li' });
@@ -30,7 +28,7 @@ class Navigation extends Component {
   }
 
   appendElements() {
-    this.links.elements.forEach((element) => {
+    Navigation.links.elements.forEach((element) => {
       this.nList.append(element);
     });
 

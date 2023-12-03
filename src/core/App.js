@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import Footer from './components/layout/footer/footer';
 import Header from './components/layout/header/header';
 import MenuPage from './pages/menu/menu';
@@ -59,7 +58,6 @@ class App {
       const elem = document.getElementById(hash);
       if (elem) return;
 
-      // eslint-disable-next-line no-unused-expressions
       App.currentPageID === routes.home
         ? this.renderPage(routes.menu)
         : this.renderPage(routes.home);

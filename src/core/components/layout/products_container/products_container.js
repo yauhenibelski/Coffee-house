@@ -22,6 +22,7 @@ class ProductsContainer extends Component {
 
   smoothRender() {
     this.container.style.opacity = 0;
+
     setTimeout(() => {
       this.render();
       this.container.style = null;

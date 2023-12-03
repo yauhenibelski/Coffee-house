@@ -4,6 +4,8 @@
   padding: 0;
   scroll-behavior: smooth;
   background-color: transparent;
+  // border: solid rgba(0, 49, 128, 0.594);
+  // box-sizing: border-box;
 }
 
 body {
@@ -14,12 +16,6 @@ body {
   color: $text-dark_color;
 }
 
-header,
-section,
-footer {
-  padding: 0 40px;
-}
-
 main {
   transition: 0.4s;
 }
@@ -27,9 +23,16 @@ main {
   width: 100%;
   max-width: $desktop-width;
   margin: auto;
+  padding: 0 40px;
 }
 
 button {
   border: none;
   cursor: pointer;
+}
+
+@media (max-width: $point-to-transform-in-mobile ) {
+  .content-container {
+    padding: 0 16px;
+  }
 }

@@ -9,10 +9,12 @@
 
   .mobile-screens {
     background-image: url(/assets/img/mobile-screens.png);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    width: 630px;
-    height: 630px;
+    max-width: 630px;
+    max-height: 630px;
+    width: 44vmax;
+    height: 44vmax;
   }
   .app-Store-Btn {
     margin-right: 20px;
@@ -20,6 +22,7 @@
 
   .download-container {
     max-width: 630px;
+    width: 42vmax;
     align-self: center;
 
     h2 {
@@ -37,5 +40,56 @@
   }
   .btn-container {
     display: flex;
+  }
+}
+
+@media (max-width: $point-to-transform-in-tablet ) {
+  .mobile-app {
+    .content-container {
+      flex-direction: column;
+    }
+    .download-container {
+      width: auto;
+      max-width: 675px;
+      align-self: start;
+
+    }
+
+    .mobile-screens {
+      align-self: center;
+      width: 82vmax;
+      height: 82vmax;
+      margin-top: 97px;
+    }
+  }
+}
+
+@media (max-width: $point-to-transform-in-mobile ) {
+  .mobile-app {
+    .download-container {
+      h2 {
+        @include headline-regular_mobile();
+  
+        span {
+          @include headline-regular_italic_mobile();
+        }
+      }
+    }
+    .btn-container {
+      display: block;
+
+      .app-Store-Btn {
+        &:first-child {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .mobile-screens {
+      background-position: center;
+      margin-top: 40px;
+      height: 100%;
+      width: 90vw;
+      min-height: 348px;
+    }
   }
 }

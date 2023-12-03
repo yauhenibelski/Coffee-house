@@ -1,5 +1,5 @@
 .enjoy {
-  .content-container {
+  .content {
     background-image: url(/assets/img/enjoy_bg.png);
     background-position-y: center;
     background-size: cover;
@@ -56,6 +56,48 @@
       }
       &:hover::after {
         opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: $point-to-transform-in-tablet ) {
+  .enjoy {
+    .content {
+      padding: 100px 60px;
+      background-position: center center;
+  
+      .menu-btn {
+        p {
+          right: 0;
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }  
+  }
+}
+
+@media (max-width: $point-to-transform-in-mobile ) {
+  .enjoy {
+    .content {
+      padding: 60px 16px;
+    }
+
+    .offerBlock {
+      h1 {
+        @include headline-text_mobile();
+  
+        span {
+          @include headline-text_italic_mobile();
+        }
+      }
+      p {
+        // @include paragraph-regular();
+        // font-weight: 400;
+        // color: $text-light_color;
+        // margin: 40px 0;
       }
     }
   }
