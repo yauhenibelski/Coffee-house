@@ -31,15 +31,18 @@
       background-position: center center;
       transition: 0.3s;
 
-      &:hover {
-        background-color: $border-dark_color;
-        background-image: url(/assets/img/arrow-light.svg);
+      @media (hover: hover) {
+        &:hover {
+          background-color: $border-dark_color;
+          background-image: url(/assets/img/arrow-light.svg);
+        }
       }
     }
     .right-btn {
       transform: rotate(180deg);
     }
   }
+  
   .slider-container {
     display: flex;
     flex-direction: column;
@@ -59,6 +62,55 @@
     .slider-price {
       @include headline_3-regular();
       margin-top: 16px;
+    }
+  }
+}
+
+@media (max-width: $point-to-transform-in-tablet ) {
+  .favorite-coffee {
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: $point-to-transform-in-mobile) {
+  .favorite-coffee {
+    h2 {
+      @include headline-regular_mobile();
+  
+      span {
+        @include headline-regular_italic_mobile();
+      }
+    }
+
+    .slider-wrap {
+      justify-content: center;
+
+      img {
+        width: 100%;
+      }
+      .right-btn,
+      .left-btn {
+        display: none;
+      }
+    }
+
+    .slider-container {
+      h3 {
+        // @include headline_3-regular();
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%;
+      }
+      p {
+        // @include paragraph-medium();
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+      }
     }
   }
 }

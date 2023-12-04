@@ -8,7 +8,7 @@ import { routes } from '../../utils/routes';
 class HomePage extends Component {
   constructor() {
     super('main');
-    this.container.id = routes.home.slice(0, -1);
+    this.container.id = routes.home.slice(1);
     this.appendElements();
   }
 

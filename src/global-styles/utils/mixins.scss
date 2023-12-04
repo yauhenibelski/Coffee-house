@@ -32,8 +32,10 @@
 
 @mixin button-primary($h, $w) {
   @include flex_center();
+  position: relative;
   width: #{$w}px;
   height: #{$h}px;
   border-radius: 100px;
   background-color: $background_color;
+  cursor: pointer;
 }

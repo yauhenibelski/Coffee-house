@@ -1,5 +1,6 @@
 footer {
-  .content-container {
+
+  .content {
     background-color: $container_color;
     display: flex;
     padding: 100px;
@@ -7,15 +8,13 @@ footer {
   }
 
   .offer-container {
-    // background-color: rgba(0, 0, 255, 0.439);
-    margin-right: 9.5vw;
+    margin-right: 130px;
+    max-width: 500px;
 
     h2 {
-      &:nth-child(1) {
         @include headline-regular();
-        color: $text-light_color;
-      }
-      &:nth-child(2) {
+        color: $text-light_color;     
+      span {
         @include  headline-regular_italic();
         color: $text-accent_color;
       }
@@ -31,7 +30,6 @@ footer {
     }
     a {
       @include showBorderBottom($border-light_color);
-      @include showBorderBottomHover();
       margin-bottom: 16px;
       display: inline-block;
       color: $text-light_color;
@@ -59,13 +57,73 @@ footer {
       svg {
         stroke: $border-light_color;
       }
+    }
+  }
+}
 
-      &:hover {
-        background-color: $background_color;
-        svg {
-          stroke: $border-dark_color;
+@media (hover: hover) {
+  footer {
+    .contact-container {
+      a {
+        @include showBorderBottomHover();
+      }
+    }
+    .socials-btn-container {
+      a {
+        &:hover {
+          background-color: $background_color;
+          svg {
+            stroke: $border-dark_color;
+          }
         }
       }
+    }
+  }
+}
+@media (max-width: 1180px) {
+  footer {
+    .content {
+      flex-direction: column;
+      padding: 60px;
+    }
+
+    .offer-container {
+      margin-right: auto;
+    }
+
+    .contact-container {
+      align-self: flex-start;
+      margin-top: 100px;
+    }
+  }
+}
+
+@media (max-width: $point-to-transform-in-tablet ) {
+  footer {
+    .content {
+      flex-direction: column;
+      padding: 100px 60px;
+    }
+  }
+}
+
+@media (max-width: $point-to-transform-in-mobile ) {
+  footer {
+    .content {
+      padding: 60px 16px;
+    }
+
+    .offer-container {
+      h2 {
+        @include headline-regular_mobile();
+        span {
+          @include headline-regular_italic_mobile();
+        }
+      }
+    }
+
+    .contact-container {
+      margin-top: 38px;
     }
   }
 }
