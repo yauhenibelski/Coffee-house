@@ -13,9 +13,9 @@ class ProductsContainer extends Component {
 
     window.onresize = () => {
       if (window.innerWidth < 1050 && this.numShowProducts > 4) {
-        this.numShowProducts= 4;
+        this.numShowProducts = 4;
         this.smoothRender();
-      } 
+      }
       if (window.innerWidth > 1050 && this.numShowProducts < 8) {
         this.numShowProducts = 8;
         this.smoothRender();

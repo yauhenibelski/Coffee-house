@@ -37,8 +37,6 @@ class App {
       header.getElement().after(menu);
     }
 
-    console.log(currentPage);
-
     setTimeout(() => {
       pages.forEach((elem) => { elem.style = null; });
       if (currentPage && (id !== App.currentPageID)) currentPage.remove();

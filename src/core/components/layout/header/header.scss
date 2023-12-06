@@ -30,7 +30,7 @@ header {
   }
 }
 
-@media (max-width: $point-to-transform-in-tablet ) {
+@media (max-width: $tablet-width) {
   header {
     nav,
     .menu-btn {

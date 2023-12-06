@@ -84,6 +84,17 @@ $img_short_max-height: 430px;
       }
     }
   }
+  @media (max-width: $point-to-transform-in-tablet ) {
+  .about {
+    .picture-wrap {
+      &:hover {
+        img {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+}
 }
 
 @media (max-width: $point-to-transform-in-tablet ) {

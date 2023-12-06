@@ -1,0 +1,47 @@
+.burger-btn {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid $border-dark_color;
+  border-radius: 50%;
+  cursor: pointer;
+
+  .lines-container {
+    position: relative;
+    height: 10px;
+    width: 16px;
+    transition: 0.3s;
+  }
+
+  .first-line,
+  .second-line {
+    position: absolute;
+    width: 16px;
+    height: 1.5px;
+    background-color: $border-dark_color;
+    transition: 0.3s;
+  }
+  .first-line {
+    top: 0;
+  }
+  .second-line {
+    bottom: 0;
+  }
+}
+.close-burger {
+  .lines-container {
+    height: 2px;
+  }
+  .first-line {
+    transform: rotateZ(45deg);
+  }
+  .second-line {
+    transform: rotateZ(-45deg);
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .burger-btn {
+    @include flex_center();    
+  }
+}

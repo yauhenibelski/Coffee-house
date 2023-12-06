@@ -8,6 +8,7 @@ import App from '../../../App';
 import { redirectTo } from '../../../utils/redirectTo';
 import { routes } from '../../../utils/routes';
 import Burger from '../../ui/burger/burger';
+import BurgerBtn from '../../ui/burger_btn/burger_btn';
 
 class Header extends Component {
   constructor() {
@@ -47,8 +48,8 @@ class Header extends Component {
     this.contentContainer.append(this.nav);
     this.contentContainer.append(menuBtn);
 
-    this.contentContainer.append(this.burger.button);
-    this.contentContainer.append(this.burger.menu);
+    this.contentContainer.append(new BurgerBtn().getElement());
+    this.contentContainer.append(this.burger);
 
     this.container.append(this.contentContainer);
   }

@@ -1,59 +1,39 @@
+import App from '../../../App';
 import createElement from '../../../utils/createElement';
+import { redirectTo } from '../../../utils/redirectTo';
+import { routes } from '../../../utils/routes';
 import Component from '../../template/component';
 
 class Burger extends Component {
   constructor(links) {
     super('div', 'burger-wrapper');
+
     this.links = links.map((link) => link.cloneNode(true));
     this.createComponent();
+
+    Burger.elem = this;
   }
 
-  static open = false;
+  open = false;
 
   createComponent() {
-    this.button = createElement({ tagName: 'div', className: 'burger-btn' });
     this.menu = createElement({ tagName: 'div', className: 'burger' });
     this.nList = createElement({ tagName: 'ul' });
+    const menuBtn = createElement({ tagName: 'div', className: 'burger-menu-btn', text: 'Menu' });
+
+    menuBtn.onclick = () => (App.currentPageID === routes.home && redirectTo(routes.menu));
 
     this.links.forEach((li) => this.nList.append(li));
-    
+
     this.menu.append(this.nList);
+    this.menu.append(menuBtn);
     this.container.append(this.menu);
-
-    // this.button.onclick = () => {
-    //   if (Burger.open) {
-    //     this.closeBurger();
-    //     document.body.onclick = null;
-    //   } else {
-    //     this.openBurger();
-
-    //     setTimeout(() => {
-    //       document.body.onclick = () => {
-    //         if (Burger.open) this.closeBurger();
-    //         document.body.onclick = null;
-    //       };
-    //     });
-    //   }
-    // };
   }
 
-  openBurger() {
-    this.menu.classList.add('burger-active');
-    this.button.classList.add('burger-btn-active');
-    Burger.open = true;
-  }
-
-  closeBurger() {
-    this.menu.classList.remove('burger-active');
-    this.button.classList.remove('burger-btn-active');
-    Burger.open = false;
-  }
-
-  getElement() {
-    return {
-      button: this.button,
-      menu: this.container,
-    };
+  openCloseBurger() {
+    this.menu.classList.toggle('burger-active');
+    this.open = !this.open;
+    document.body.onclick = null;
   }
 }
 
