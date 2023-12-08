@@ -8,26 +8,29 @@ class ProductsContainer extends Component {
   constructor() {
     super('div', 'products-container');
     ProductsContainer.elem = this;
-    this.tabletWidthPoint = 768;
-    this.numShowProducts = window.innerWidth <= this.tabletWidthPoint ? 4 : 8;
-    this.productPage = 0;
+
+    this.tabletWidth = {
+      value: 768,
+      isTabletScreen() { return window.innerWidth <= this.value; },
+    };
+
+    this.numShowProducts = {
+      minValue: 4,
+      showAll: !this.tabletWidth.isTabletScreen(),
+    };
 
     this.setFilteredProducts();
     this.setShownProducts();
     this.createComponent();
 
     window.onresize = () => {
-      const areAllProductsShown = this.filteredProducts.length === this.shownProducts.length;
+      const { showAll } = this.numShowProducts;
 
-      if (window.innerWidth <= this.tabletWidthPoint && areAllProductsShown) {
-        // this.productPage = 0;
-        this.numShowProducts = 4;
-        this.setShownProducts();
-        this.smoothRender();
-      } // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      if (window.innerWidth > this.tabletWidthPoint && !areAllProductsShown) {
-        // this.productPage = 0;
-        this.numShowProducts = 8;
+      if (
+        (this.tabletWidth.isTabletScreen() && showAll && !RefreshBtn.checked)
+          || (!this.tabletWidth.isTabletScreen() && !showAll)
+      ) {
+        this.numShowProducts.showAll = !this.tabletWidth.isTabletScreen();
         this.setShownProducts();
         this.smoothRender();
       }
@@ -35,28 +38,15 @@ class ProductsContainer extends Component {
   }
 
   createComponent() {
-    // this.shownProducts[this.productPage].forEach((product) => {
-    //   this.container.append(new Card(product).getElement());
-    // });
     this.shownProducts.forEach((product) => {
       this.container.append(new Card(product).getElement());
     });
   }
 
-  // setNextProductPage() {
-  //   this.productPage + 1 in this.shownProducts
-  //     ? this.productPage += 1
-  //     : this.productPage = 0;
-  // }
-
   setShownProducts() {
-    // this.shownProducts = new Array(
-    //   Math.round(this.filteredProducts.length / this.numShowProducts),
-    // ).fill([])
-    //   .map((_, i) => {
-    //     return [...this.filteredProducts].splice(i === 0 ? i : i * this.numShowProducts, this.numShowProducts);
-    //   });
-    this.shownProducts = [...this.filteredProducts].splice(0, this.numShowProducts);
+    this.shownProducts = this.numShowProducts.showAll
+      ? [...this.filteredProducts]
+      : [...this.filteredProducts].splice(0, this.numShowProducts.minValue);
   }
 
   setFilteredProducts() {
@@ -64,8 +54,8 @@ class ProductsContainer extends Component {
   }
 
   changeCategory() {
-    // this.productPage = 0;
-    this.numShowProducts = window.innerWidth <= this.tabletWidthPoint ? 4 : 8;
+    this.numShowProducts.showAll = !this.tabletWidth.isTabletScreen();
+    RefreshBtn.checked = false;
     this.setFilteredProducts();
     this.setShownProducts();
     this.smoothRender();
@@ -73,12 +63,20 @@ class ProductsContainer extends Component {
 
   smoothRender() {
     this.container.style.opacity = 0;
-    RefreshBtn.elem.setVisibility();
-  
+
     setTimeout(() => {
       this.render();
       this.container.style = null;
-    }, 300);
+    }, 200);
+  }
+
+  render() {
+    this.container.innerHTML = '';
+    RefreshBtn.checked = false;
+    RefreshBtn.elem.setVisibility();
+    this.setFilteredProducts();
+    this.setShownProducts();
+    this.createComponent();
   }
 }
 

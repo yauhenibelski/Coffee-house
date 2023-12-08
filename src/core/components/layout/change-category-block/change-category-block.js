@@ -5,9 +5,23 @@ import ProductsContainer from '../products_container/products_container';
 class ChangeCategoryBlock extends Component {
   constructor() {
     super('div', 'choose-category-btn-wrap');
+    ChangeCategoryBlock.elem = this;
 
-    this.createElements();
-    this.appendElements();
+    this.createComponent();
+  }
+
+  createComponent() {
+    this.chooseCategoryBTNs = [
+      new ChooseCategoryBtn({
+        id: 'coffee', name: 'category', text: 'Coffee', icon: '☕',
+      }).getElement(),
+      new ChooseCategoryBtn({
+        id: 'tea', name: 'category', text: 'Tea', icon: '🫖',
+      }).getElement(),
+      new ChooseCategoryBtn({
+        id: 'dessert', name: 'category', text: 'Dessert', icon: '🍰',
+      }).getElement(),
+    ];
 
     const firstBtn = this.chooseCategoryBTNs[0].firstElementChild;
     firstBtn.checked = true;
@@ -23,23 +37,7 @@ class ChangeCategoryBlock extends Component {
         }
       });
     };
-  }
 
-  createElements() {
-    this.chooseCategoryBTNs = [
-      new ChooseCategoryBtn({
-        id: 'coffee', name: 'category', text: 'Coffee', icon: '☕',
-      }).getElement(),
-      new ChooseCategoryBtn({
-        id: 'tea', name: 'category', text: 'Tea', icon: '🫖',
-      }).getElement(),
-      new ChooseCategoryBtn({
-        id: 'dessert', name: 'category', text: 'Dessert', icon: '🍰',
-      }).getElement(),
-    ];
-  }
-
-  appendElements() {
     this.chooseCategoryBTNs.forEach((elem) => this.container.append(elem));
   }
 }

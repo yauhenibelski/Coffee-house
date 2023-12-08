@@ -3,6 +3,8 @@ import Header from './components/layout/header/header';
 import MenuPage from './pages/menu/menu';
 import HomePage from './pages/home/home';
 import { routes } from './utils/routes';
+import ChangeCategoryBlock from './components/layout/change-category-block/change-category-block';
+import ProductsContainer from './components/layout/products_container/products_container';
 
 class App {
   constructor() {
@@ -42,7 +44,14 @@ class App {
       if (currentPage && (id !== App.currentPageID)) currentPage.remove();
 
       App.currentPageID = id;
-      this.elem.header.render();
+      header.render();
+
+      // ------ only for review -----------
+      ChangeCategoryBlock.value = 'coffee';
+      ChangeCategoryBlock.elem.render();
+      ProductsContainer.elem.numShowProducts.showAll = !ProductsContainer.elem.tabletWidth.isTabletScreen();
+      ProductsContainer.elem.render();
+      // ------ only for review -----------
     }, 70);
   }
 
