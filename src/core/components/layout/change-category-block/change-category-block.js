@@ -1,6 +1,6 @@
 import Component from '../../template/component';
 import ChooseCategoryBtn from '../../ui/choose-category_btn/choose-category_btn';
-// import ProductsContainer from '../products_container/products_container';
+import ProductsContainer from '../products_container/products_container';
 
 class ChangeCategoryBlock extends Component {
   constructor() {
@@ -14,15 +14,14 @@ class ChangeCategoryBlock extends Component {
     ChangeCategoryBlock.value = firstBtn.id;
 
     this.container.onchange = () => {
-      firstBtn.checked = true;
-      // this.chooseCategoryBTNs.forEach((elem) => {
-      //   const inputElem = elem.firstChild;
+      this.chooseCategoryBTNs.forEach((elem) => {
+        const inputElem = elem.firstChild;
 
-      //   if (inputElem.checked) {
-      //     ChangeCategoryBlock.value = inputElem.id;
-      //     ProductsContainer.elem.smoothRender();
-      //   }
-      // });
+        if (inputElem.checked) {
+          ChangeCategoryBlock.value = inputElem.id;
+          ProductsContainer.elem.changeCategory();
+        }
+      });
     };
   }
 

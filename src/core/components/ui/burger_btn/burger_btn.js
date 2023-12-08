@@ -1,4 +1,3 @@
-import createElement from '../../../utils/createElement';
 import Component from '../../template/component';
 import Burger from '../burger/burger';
 
