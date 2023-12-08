@@ -26,6 +26,13 @@ module.exports = ({ develop }) => ({
         },
       },
       {
+        test: /\.(mp4)$/,
+        type: 'asset/resource',
+        generator: {
+            filename: './assets/video/[name][ext]',
+        },
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)$/,
         type: 'asset/resource',
         generator: {

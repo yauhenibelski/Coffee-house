@@ -33,6 +33,10 @@ class Burger extends Component {
   openCloseBurger() {
     this.menu.classList.toggle('burger-active');
     this.open = !this.open;
+
+    this.container.style.height = this.open ? '100vh' : '0vh';
+    document.body.style.overflow = this.open ? 'hidden' : '';
+
     document.body.onclick = null;
   }
 }

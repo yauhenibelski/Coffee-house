@@ -5,6 +5,8 @@ import HomePage from './pages/home/home';
 import { routes } from './utils/routes';
 import ChangeCategoryBlock from './components/layout/change-category-block/change-category-block';
 import ProductsContainer from './components/layout/products_container/products_container';
+import RefreshBtn from './components/ui/refresh-btn/refresh-btn';
+import Enjoy from './components/layout/enjoy_block/enjoy';
 
 class App {
   constructor() {
@@ -34,6 +36,7 @@ class App {
 
     if (id === routes.home) {
       header.getElement().after(home);
+      Enjoy.video.load();
     }
     if (id === routes.menu) {
       header.getElement().after(menu);
@@ -48,6 +51,7 @@ class App {
 
       // ------ only for review -----------
       ChangeCategoryBlock.value = 'coffee';
+      RefreshBtn.checked = false;
       ChangeCategoryBlock.elem.render();
       ProductsContainer.elem.numShowProducts.showAll = !ProductsContainer.elem.tabletWidth.isTabletScreen();
       ProductsContainer.elem.render();

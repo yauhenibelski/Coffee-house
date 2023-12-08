@@ -2,6 +2,7 @@ import createElement from '../../../utils/createElement';
 import Component from '../../template/component';
 import { redirectTo } from '../../../utils/redirectTo';
 import { routes } from '../../../utils/routes';
+import video from '../../../../assets/video.mp4';
 
 class Enjoy extends Component {
   constructor() {
@@ -10,6 +11,7 @@ class Enjoy extends Component {
     this.createElements();
     this.appendElements();
 
+    Enjoy.video = this.video;
     this.menuBtn.onclick = () => redirectTo(routes.menu);
   }
 
@@ -20,6 +22,16 @@ class Enjoy extends Component {
     this.menuBtn = createElement({ tagName: 'div', className: 'menu-btn' });
     this.menuBtnText = createElement({ tagName: 'p', text: 'Menu' });
     this.content = createElement({ tagName: 'div', className: 'content' });
+
+    this.videoContainer = createElement({ tagName: 'div', className: 'video-container' });
+
+    this.video = createElement({ tagName: 'video' });
+    this.video.src = video;
+    this.video.autoplay = 'true';
+    this.video.loop = 'true';
+    this.video.muted = 'false';
+
+    // console.dir(this.video)
   }
 
   appendElements() {
@@ -30,6 +42,9 @@ class Enjoy extends Component {
     this.offerBlock.append(this.menuBtn);
 
     this.content.append(this.offerBlock);
+    this.content.append(this.videoContainer);
+
+    this.videoContainer.append(this.video);
 
     this.contentContainer.append(this.content);
     this.container.append(this.contentContainer);

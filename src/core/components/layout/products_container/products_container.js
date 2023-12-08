@@ -70,14 +70,15 @@ class ProductsContainer extends Component {
     }, 200);
   }
 
+  // ------ only for review -----------
   render() {
     this.container.innerHTML = '';
-    RefreshBtn.checked = false;
     RefreshBtn.elem.setVisibility();
     this.setFilteredProducts();
     this.setShownProducts();
     this.createComponent();
   }
+  // ------ only for review -----------
 }
 
 export default ProductsContainer;

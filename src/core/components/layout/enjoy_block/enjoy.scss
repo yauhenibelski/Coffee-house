@@ -1,14 +1,18 @@
 .enjoy {
   .content {
     background-image: url(/assets/img/enjoy_bg.png);
+    position: relative;
     background-position-y: center;
     background-size: cover;
     border-radius: 40px;
     padding: 100px;
     margin-top: 16px;
+    overflow: hidden;
   }
   .offerBlock {
     max-width: 540px;
+    position: relative;
+    z-index: 1;
 
     h1 {
       @include headline-text();
@@ -56,6 +60,19 @@
       &:hover::after {
         opacity: 1;
       }
+    }
+  }
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
     }
   }
 }
