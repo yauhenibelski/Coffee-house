@@ -1,4 +1,5 @@
 import Component from '../../template/component';
+import Popup from '../popup/popup';
 
 class Card extends Component {
   constructor(product) {
@@ -7,6 +8,11 @@ class Card extends Component {
 
     this.createElements();
     this.appendElements();
+
+    this.container.onclick = () => {
+      Popup.run(new Card(product).getElement())
+      console.log(1)
+    }
   }
 
   createElements() {

@@ -34,8 +34,9 @@ class Burger extends Component {
     this.menu.classList.toggle('burger-active');
     this.open = !this.open;
 
-    this.container.style.height = this.open ? '100vh' : '0vh';
-    document.body.style.overflow = this.open ? 'hidden' : '';
+    this.container.style.minHeight = this.open ? '660px' : '';
+    this.container.style.height = this.open ? '100vh' : '';
+    // document.body.style.overflow = this.open ? 'hidden' : '';
 
     document.body.onclick = null;
   }
