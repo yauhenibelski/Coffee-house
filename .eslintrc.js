@@ -10,7 +10,7 @@ module.exports = {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": [".eslintrc.js", "webpack.config.js"],
+  "ignorePatterns": [".eslintrc.js", "webpack.config.js", "build"],
   "rules": {
     "no-underscore-dangle": "off",
     "consistent-return": "off",

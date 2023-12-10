@@ -82,7 +82,6 @@ class App {
 
   run() {
     const { header, footer } = this.elem;
-
     this.container.append(header.getElement());
     this.container.append(footer.getElement());
 

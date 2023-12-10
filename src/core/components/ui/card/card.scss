@@ -6,6 +6,7 @@
   height: 506px;
   border-radius: 40px;
   border: 1px solid $border-light_color;
+  cursor: pointer;
 
   .img-wrap {
     @include flex_center();

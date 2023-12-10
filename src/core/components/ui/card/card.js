@@ -1,4 +1,5 @@
 import Component from '../../template/component';
+import Modal from '../modal/modal';
 import Popup from '../popup/popup';
 
 class Card extends Component {
@@ -10,9 +11,8 @@ class Card extends Component {
     this.appendElements();
 
     this.container.onclick = () => {
-      Popup.run(new Card(product).getElement())
-      console.log(1)
-    }
+      Popup.run(new Modal(this.product).getElement());
+    };
   }
 
   createElements() {

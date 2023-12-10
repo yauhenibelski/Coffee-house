@@ -14,13 +14,13 @@ class ChangeCategoryBlock extends Component {
     this.chooseCategoryBTNs = [
       new ChooseCategoryBtn({
         id: 'coffee', name: 'category', text: 'Coffee', icon: '☕',
-      }).getElement(),
+      }, 'radio').getElement(),
       new ChooseCategoryBtn({
         id: 'tea', name: 'category', text: 'Tea', icon: '🫖',
-      }).getElement(),
+      }, 'radio').getElement(),
       new ChooseCategoryBtn({
         id: 'dessert', name: 'category', text: 'Dessert', icon: '🍰',
-      }).getElement(),
+      }, 'radio').getElement(),
     ];
 
     const firstBtn = this.chooseCategoryBTNs[0].firstElementChild;

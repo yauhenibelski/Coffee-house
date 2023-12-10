@@ -31,7 +31,7 @@ class Popup extends Component {
     return this.container;
   }
 }
-Popup.run = (content, color) => {
+Popup.run = (content) => {
   document.body.append(new Popup(content).render());
 };
 

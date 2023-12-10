@@ -1,0 +1,29 @@
+.modal-parameters-wrap {
+  margin-top: 20px;
+  .buttons-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: start;
+    margin-top: 11px;
+    
+    .choose-category-wrap {
+      margin-right: 6px;
+    }
+  }
+  .price-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 820px) {
+    .buttons-wrap {
+      grid-template-columns: repeat(2, auto);
+
+      .choose-category-wrap {
+        &:last-child {
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+}

@@ -2,9 +2,10 @@ import createElement from '../../../utils/createElement';
 import Component from '../../template/component';
 
 class ChooseCategoryBtn extends Component {
-  constructor(prop) {
+  constructor(prop, type) {
     super('div', 'choose-category-wrap');
     this.prop = prop;
+    this.type = type;
 
     this.createElements();
     this.appendElements();
@@ -13,7 +14,7 @@ class ChooseCategoryBtn extends Component {
   createElements() {
     this.input = createElement({ tagName: 'input' });
     this.input.id = this.prop.id;
-    this.input.type = 'radio';
+    this.input.type = this.type;
     this.input.name = this.prop.name;
 
     this.label = createElement({ tagName: 'label', className: 'choose-category' });
@@ -21,6 +22,10 @@ class ChooseCategoryBtn extends Component {
 
     this.icon = createElement({ tagName: 'span', text: this.prop.icon });
     this.text = createElement({ tagName: 'span', text: this.prop.text });
+
+    if (this.prop.value) {
+      this.input.value = this.prop.value;
+    }
   }
 
   appendElements() {
