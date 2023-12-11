@@ -1,23 +1,27 @@
 import createElement from '../../../utils/createElement';
 import Component from '../../template/component';
+import Slider from '../slider/slider';
 
 class SliderControl extends Component {
   constructor() {
     super('div', 'slider-control-container');
 
-    this.createElements();
-    this.appendElements();
+    this.createComponent();
   }
 
-  createElements() {
-    const mockSlides = new Array(3).fill(null);
-    this.activeSlide = 0;
+  static elements = [];
 
-    mockSlides.forEach((_, i) => {
+  createComponent() {
+    Slider.slides.forEach((_, i) => {
       const vLine = createElement({ tagName: 'div', className: 'vie-line' });
-      if (this.activeSlide === i) {
-        vLine.classList.add('vie-line-active');
+      const vLineFill = createElement({ tagName: 'div', className: 'vie-line-fill' });
+
+      if (i === Slider.currentNumSlide) {
+        vLine.classList.add('fill');
       }
+
+      SliderControl.elements.push(vLine);
+      vLine.append(vLineFill);
       this.container.append(vLine);
     });
   }

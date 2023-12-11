@@ -3,6 +3,7 @@
   margin-top: 40px;
 
   .vie-line {
+    position: relative;
     border-radius: 100px;
     margin-right: 12px;
     width: 40px;
@@ -14,7 +15,27 @@
     }
   }
 
-  .vie-line-active {
+  .vie-line-fill {
+    position: absolute;
     background-color: $border-dark_color;
+    border-radius: 100px;
+    height: 100%;
+    width: 0%;
+    transition: 0.3s;
+  }
+  .fill {
+    .vie-line-fill {
+      animation:  linear fill 5s;
+    }
+  }
+}
+
+@keyframes fill {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
   }
 }

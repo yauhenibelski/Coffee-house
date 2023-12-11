@@ -7,6 +7,7 @@ import ChangeCategoryBlock from './components/layout/change-category-block/chang
 import ProductsContainer from './components/layout/products_container/products_container';
 import RefreshBtn from './components/ui/refresh-btn/refresh-btn';
 import Enjoy from './components/layout/enjoy_block/enjoy';
+import Slider from './components/ui/slider/slider';
 
 class App {
   constructor() {
@@ -55,6 +56,8 @@ class App {
       ChangeCategoryBlock.elem.render();
       ProductsContainer.elem.numShowProducts.showAll = !ProductsContainer.elem.tabletWidth.isTabletScreen();
       ProductsContainer.elem.render();
+      clearInterval(Slider.interval.id);
+      Slider.autoChangeSlide(Slider.interval.delay);
       // ------ only for review -----------
     }, 70);
   }
