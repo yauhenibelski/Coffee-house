@@ -5,6 +5,7 @@ import slide2 from '../../../../assets/img/coffee-slider-2.png';
 import slide3 from '../../../../assets/img/coffee-slider-3.png';
 import Slide from '../slide/slide';
 import SliderControl from '../slider_control/slider_control';
+import App from '../../../App';
 
 class Slider extends Component {
   constructor() {

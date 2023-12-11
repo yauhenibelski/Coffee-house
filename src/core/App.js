@@ -8,6 +8,7 @@ import ProductsContainer from './components/layout/products_container/products_c
 import RefreshBtn from './components/ui/refresh-btn/refresh-btn';
 import Enjoy from './components/layout/enjoy_block/enjoy';
 import Slider from './components/ui/slider/slider';
+import getDeviceType from './utils/getDeviceType';
 
 class App {
   constructor() {
@@ -15,6 +16,7 @@ class App {
     window.location.hash = App.currentPageID;
   }
 
+  static deviceType = getDeviceType();
   static currentPageID = routes.home;
 
   pages = {
@@ -84,6 +86,12 @@ class App {
   }
 
   run() {
+    // ------ only for review -----------
+    window.addEventListener('resize', () => {
+      if (App.deviceType !== getDeviceType()) location.reload();
+    });
+    // ------ only for review -----------
+
     const { header, footer } = this.elem;
     this.container.append(header.getElement());
     this.container.append(footer.getElement());
