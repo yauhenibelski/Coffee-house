@@ -30,8 +30,7 @@ class Enjoy extends Component {
     this.video.autoplay = 'true';
     this.video.loop = 'true';
     this.video.muted = 'false';
-
-    // console.dir(this.video)
+    this.video.oncontextmenu = (e) => { e.preventDefault(); };
   }
 
   appendElements() {

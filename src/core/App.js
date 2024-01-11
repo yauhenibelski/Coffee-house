@@ -3,9 +3,6 @@ import Header from './components/layout/header/header';
 import MenuPage from './pages/menu/menu';
 import HomePage from './pages/home/home';
 import { routes } from './utils/routes';
-import ChangeCategoryBlock from './components/layout/change-category-block/change-category-block';
-import ProductsContainer from './components/layout/products_container/products_container';
-import RefreshBtn from './components/ui/refresh-btn/refresh-btn';
 import Enjoy from './components/layout/enjoy_block/enjoy';
 import Slider from './components/ui/slider/slider';
 import getDeviceType from './utils/getDeviceType';
@@ -13,11 +10,12 @@ import getDeviceType from './utils/getDeviceType';
 class App {
   constructor() {
     this.container = document.body;
+    const path = window.location.hash.slice(1);
+    App.currentPageID = [routes.home, routes.menu].includes(path) ? path : routes.home;
     window.location.hash = App.currentPageID;
   }
 
   static deviceType = getDeviceType();
-  static currentPageID = routes.home;
 
   pages = {
     home: new HomePage(),
@@ -52,15 +50,8 @@ class App {
       App.currentPageID = id;
       header.render();
 
-      // ------ only for review -----------
-      ChangeCategoryBlock.value = 'coffee';
-      RefreshBtn.checked = false;
-      ChangeCategoryBlock.elem.render();
-      ProductsContainer.elem.numShowProducts.showAll = !ProductsContainer.elem.tabletWidth.isTabletScreen();
-      ProductsContainer.elem.render();
       clearInterval(Slider.interval.id);
       Slider.autoChangeSlide(Slider.interval.delay);
-      // ------ only for review -----------
     }, 70);
   }
 
@@ -86,17 +77,11 @@ class App {
   }
 
   run() {
-    // ------ only for review -----------
-    window.addEventListener('resize', () => {
-      if (App.deviceType !== getDeviceType()) location.reload();
-    });
-    // ------ only for review -----------
-
     const { header, footer } = this.elem;
     this.container.append(header.getElement());
     this.container.append(footer.getElement());
 
-    this.renderPage(routes.home);
+    this.renderPage(App.currentPageID);
     this.router();
   }
 }

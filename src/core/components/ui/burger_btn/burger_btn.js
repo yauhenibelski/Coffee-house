@@ -6,6 +6,7 @@ class BurgerBtn extends Component {
     super('div', 'burger-btn');
 
     this.createComponent();
+    BurgerBtn.elem = this.container;
   }
 
   createComponent() {
@@ -19,15 +20,6 @@ class BurgerBtn extends Component {
     this.container.onclick = () => {
       this.container.classList.toggle('close-burger');
       Burger.elem.openCloseBurger();
-
-      setTimeout(() => {
-        document.body.onclick = () => {
-          if (Burger.elem.open) {
-            this.container.classList.toggle('close-burger');
-            Burger.elem.openCloseBurger();
-          }
-        };
-      });
     };
   }
 }

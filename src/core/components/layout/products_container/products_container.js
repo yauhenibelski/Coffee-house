@@ -3,6 +3,8 @@ import Card from '../../ui/card/card';
 import { products as productsData } from '../../../../assets/products';
 import ChangeCategoryBlock from '../change-category-block/change-category-block';
 import RefreshBtn from '../../ui/refresh-btn/refresh-btn';
+import Burger from '../../ui/burger/burger';
+import BurgerBtn from '../../ui/burger_btn/burger_btn';
 
 class ProductsContainer extends Component {
   constructor() {
@@ -25,6 +27,11 @@ class ProductsContainer extends Component {
 
     window.onresize = () => {
       const { showAll } = this.numShowProducts;
+
+      if (!this.tabletWidth.isTabletScreen() && BurgerBtn.elem.classList.contains('close-burger')) {
+        BurgerBtn.elem.classList.remove('close-burger');
+        Burger.elem.openCloseBurger();
+      }
 
       if (
         (this.tabletWidth.isTabletScreen() && showAll && !RefreshBtn.checked)

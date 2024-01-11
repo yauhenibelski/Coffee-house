@@ -20,8 +20,9 @@ class Slider extends Component {
     Slider.changeSlide = this.changeSlide.bind(this);
     Slider.autoChangeSlide = this.autoChangeSlide.bind(this);
 
-    this.slideContainerWrap.onmouseover = () => { Slider.playStopAnimation('stop'); };
-    this.slideContainerWrap.onmouseout = () => { Slider.playStopAnimation('play'); };
+    this.slideContainerWrap.oncontextmenu = (e) => { e.preventDefault(); };
+    this.slideContainerWrap.onmouseover = () => { App.deviceType === 'desktop' && Slider.playStopAnimation('stop'); };
+    this.slideContainerWrap.onmouseout = () => { App.deviceType === 'desktop' && Slider.playStopAnimation('play'); };
 
     let clientX;
 
@@ -62,9 +63,7 @@ class Slider extends Component {
 
     this.slideContainerWrap.append(this.slideContainer);
 
-    this.container.append(this.leftBtn);
-    this.container.append(this.slideContainerWrap);
-    this.container.append(this.rightBtn);
+    this.container.append(...[this.leftBtn, this.slideContainerWrap, this.rightBtn]);
   }
 
   changeSlide(value) {
@@ -81,16 +80,7 @@ class Slider extends Component {
         : Slider.slides.length - 1;
     }
 
-    const currentControl = SliderControl.elements[Slider.currentNumSlide].firstElementChild;
-    const currentControlWidth = getComputedStyle(currentControl).width;
-
-    currentControl.style.width = currentControlWidth;
-
     Slider.lastSlide = Slider.currentNumSlide;
-
-    setTimeout(() => {
-      SliderControl.elements[Slider.lastSlide].firstElementChild.style.width = '0px';
-    });
 
     SliderControl.elements[Slider.lastSlide].classList.remove('fill');
     this.slideContainer.style.transform = `translateX(-${nextSlideNum * Slider.slides[nextSlideNum].offsetWidth}px)`;
@@ -100,6 +90,10 @@ class Slider extends Component {
     Slider.interval.delay = Slider.interval.animationDelay;
 
     Slider.autoChangeSlide(Slider.interval.delay);
+
+    setTimeout(() => {
+      SliderControl.elements[Slider.lastSlide].firstElementChild.style.width = '0px';
+    });
   }
 
   static interval = {
@@ -111,9 +105,7 @@ class Slider extends Component {
   };
 
   autoChangeSlide(delay) {
-    if (Slider.interval.id) {
-      clearInterval(Slider.interval.id);
-    }
+    if (Slider.interval.id) clearInterval(Slider.interval.id);
 
     Slider.interval.startTime = Date.now();
     Slider.interval.id = setInterval(() => {
