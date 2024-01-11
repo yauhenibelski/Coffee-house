@@ -1,4 +1,6 @@
 const getDeviceType = () => {
-  return navigator.userAgentData.mobile ? 'mobile' : 'desktop';
+  if (navigator.userAgentData) {
+    return navigator.userAgentData.mobile ? 'mobile' : 'desktop';
+  }
 };
 export default getDeviceType;
