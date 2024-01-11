@@ -1,0 +1,26 @@
+nav {
+  ul {
+    display: flex;
+  }
+
+  li {
+    list-style-type: none;
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+  a {
+    @include showBorderBottom($text-dark_color);
+    @include paragraph-regular();
+
+    text-decoration: none;
+    color: $text-dark_color;
+  }
+  @media (hover: hover) {
+    a {
+      @include showBorderBottomHover();
+    }
+  }
+}

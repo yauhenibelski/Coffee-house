@@ -1,0 +1,50 @@
+.slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    @include headline_3-regular();
+    margin-top: 17px;
+  }
+  p {
+    @include paragraph-medium();
+    max-width: 480px;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .slider-price {
+    @include headline_3-regular();
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: $point-to-transform-in-mobile) {
+  .slider-container {
+    .img-wrap {
+      position: relative;
+      height: 348px;
+      width: 348px;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    h3 {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 125%;
+    }
+    p {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+}

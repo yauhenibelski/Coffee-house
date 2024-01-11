@@ -1,0 +1,129 @@
+footer {
+
+  .content {
+    background-color: $container_color;
+    display: flex;
+    padding: 100px;
+    border-radius: 40px;
+  }
+
+  .offer-container {
+    margin-right: 130px;
+    max-width: 500px;
+
+    h2 {
+        @include headline-regular();
+        color: $text-light_color;     
+      span {
+        @include  headline-regular_italic();
+        color: $text-accent_color;
+      }
+    }
+  }
+  .contact-container {
+    color: $text-light_color;
+    align-self: center;
+
+    h3 {
+      @include headline_3-regular();
+      margin-bottom: 36px;
+    }
+    a {
+      @include showBorderBottom($border-light_color);
+      margin-bottom: 16px;
+      display: inline-block;
+      color: $text-light_color;
+      text-decoration: none;
+      text-align: center;
+    }
+    .text {
+      @include paragraph-regular();
+      margin-left: 3px;
+    }
+  }
+  .socials-btn-container {
+    display: flex;
+    margin-top: 40px;
+
+    a {
+      @include flex_center();
+      border-radius: 100px;
+      border: 1px solid $border-light_color;
+      height: 60px;
+      width: 60px;
+      margin-right: 12px;
+      transition: 0.4s;
+
+      svg {
+        stroke: $border-light_color;
+      }
+    }
+  }
+}
+
+@media (hover: hover) {
+  footer {
+    .contact-container {
+      a {
+        @include showBorderBottomHover();
+      }
+    }
+    .socials-btn-container {
+      a {
+        &:hover {
+          background-color: $background_color;
+          svg {
+            stroke: $border-dark_color;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1180px) {
+  footer {
+    .content {
+      flex-direction: column;
+      padding: 60px;
+    }
+
+    .offer-container {
+      margin-right: auto;
+    }
+
+    .contact-container {
+      align-self: flex-start;
+      margin-top: 100px;
+    }
+  }
+}
+
+@media (max-width: $point-to-transform-in-tablet ) {
+  footer {
+    .content {
+      flex-direction: column;
+      padding: 100px 60px;
+    }
+  }
+}
+
+@media (max-width: $point-to-transform-in-mobile ) {
+  footer {
+    .content {
+      padding: 60px 16px;
+    }
+
+    .offer-container {
+      h2 {
+        @include headline-regular_mobile();
+        span {
+          @include headline-regular_italic_mobile();
+        }
+      }
+    }
+
+    .contact-container {
+      margin-top: 38px;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.favorite-coffee {
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+  h2 {
+    @include headline-regular();
+
+    span {
+      @include headline-regular_italic();
+      color: $text-accent_color;
+    }
+  }
+}
+
+@media (max-width: $point-to-transform-in-tablet ) {
+  .favorite-coffee {
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: $point-to-transform-in-mobile) {
+  .favorite-coffee {
+    h2 {
+      @include headline-regular_mobile();
+  
+      span {
+        @include headline-regular_italic_mobile();
+      }
+    }
+  }
+}

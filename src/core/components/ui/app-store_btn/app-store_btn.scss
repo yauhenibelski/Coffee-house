@@ -1,0 +1,44 @@
+.app-Store-Btn {
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid $border-dark_color;
+    width: 200px;
+    height: 64px;
+    padding: 0 20px;
+    transition: 0.3s;
+    color: $text-dark_color;
+    cursor: pointer;
+
+    svg {
+      fill: $text-dark_color;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      margin-left: 8px;
+    }
+    p {
+      transition: 0.3s;
+      &:first-child {
+        @include paragraph-caption();
+      }
+      &:last-child {
+        @include paragraph-regular();
+      }
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: $container_color;
+        svg {
+          fill: $background_color;
+          transition: 0.3s;
+        }
+        p {
+          color: $background_color;
+        }
+      }
+    }
+}

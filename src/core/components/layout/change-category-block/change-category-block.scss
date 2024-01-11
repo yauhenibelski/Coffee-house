@@ -1,0 +1,23 @@
+.choose-category-btn-wrap {
+  display: flex;
+  margin-top: 40px;
+
+  .choose-category-wrap {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+@media (max-width: 740px) {
+  .choose-category-btn-wrap {
+    .choose-category-wrap {
+      margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+}

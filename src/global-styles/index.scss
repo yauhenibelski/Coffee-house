@@ -1,0 +1,32 @@
+@import './base/fonts.scss';
+@import './base/normalize.scss';
+@import './utils/variables.scss';
+@import './utils/mixins.scss';
+@import './base/root.scss';
+
+// Components
+@import '../core/components/layout/header/header.scss';
+@import '../core/components/ui/navigation/navigation.scss';
+@import '../core/components/layout/enjoy_block/enjoy.scss';
+@import '../core/components/layout/favorites_coffee/favorites_coffee.scss';
+@import '../core/components/ui/slider_control/slider_control.scss';
+@import '../core/components/layout/about_section/about_section.scss';
+@import '../core/components/layout/mobile-app_block/mobile-app_block.scss';
+@import '../core/components/ui/app-store_btn/app-store_btn.scss';
+@import '../core/components/layout/footer/footer.scss';
+@import '../core//components/ui/choose-category_btn/choose-category_btn.scss';
+@import '../core/components/layout/change-category-block/change-category-block.scss';
+@import '../core/components/layout/products_container/products_container.scss';
+@import '../core/components/ui/card/card.scss';
+@import '../core/components/ui/burger/burger.scss';
+@import '../core/components/ui/burger_btn/burger_btn.scss';
+@import '../core/components/ui/refresh-btn/refresh-btn.scss';
+@import '../core/components/ui/popup/popup.scss';
+@import '../core/components/ui/modal/modal.scss';
+@import '../core/components/ui/modal-parameters/modal-parameters.scss';
+@import '../core/components/ui/slide/slide.scss';
+@import '../core/components/ui/slider/slider.scss';
+
+// Pages
+@import '../core/pages/home/home.scss';
+@import '../core/pages/menu/menu.scss';
